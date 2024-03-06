@@ -2,7 +2,7 @@
 from enum import Enum
 
 class Simulation_Step(Enum):
-    OnStatusUpdate = 1
+    OnStartStatusUpdate = 1
     OnInitiation = 2
     BeforeDealDamage = 3
     OnDealDamage = 4
@@ -12,3 +12,4 @@ class Simulation_Step(Enum):
     OnAutoAttack = 8
     BeforeCastUltimate = 9
     OnCastUltimate = 10
+    OnEndStatusUpdate = 11

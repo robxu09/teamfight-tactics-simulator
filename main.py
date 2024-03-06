@@ -22,11 +22,12 @@ def main():
     Bloodthirster = all_items.get("Bloodthirster")
     Warmogs = all_items.get("Warmog's Armor")
     ChainVest = all_items.get("Chain Vest")
+    LW = all_items.get("Last Whisperer")
 
     # give items to champion 1
     # champion1.add_items(Deathblade)
-    champion1.add_items(Bloodthirster)
-    champion1.add_items(Bloodthirster)
+    champion1.add_items(LW)
+    champion1.add_items(LW)
 
     # give items to champion 2
     champion2.add_items(Warmogs)

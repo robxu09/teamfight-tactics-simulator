@@ -17,9 +17,9 @@ class OneVsOne:
         # one tick is .05 seconds
         while(timer.current_time < timer.end_time):
 
-            # Champions update their status
-            champion1.update_status(champion2)
-            champion2.update_status(champion1)
+            # Champions update their status at start
+            champion1.update_status_start(champion2)
+            champion2.update_status_start(champion1)
 
             # Simulate ultimate casts if ready
             champion1.cast_ultimate_if_possible(champion2)
@@ -38,6 +38,10 @@ class OneVsOne:
             if champion1.health <= 0:
                 print(f"{champion1.name} has been defeated!")
                 break
+            
+            # champions update their status at end
+            champion1.update_status_end(champion2)
+            champion2.update_status_end(champion1)
             
             # print(f"Timer: {round(timer.current_time,2)}")
             # increment simulation timer

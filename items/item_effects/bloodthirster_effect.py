@@ -30,7 +30,7 @@ def get_bloodthirster_effect():
         number_of_times_effect_can_trigger = 1
 
         # handle effect trigger start
-        if(simulation_step == Simulation_Step.OnStatusUpdate):
+        if(simulation_step == Simulation_Step.OnStartStatusUpdate):
             (f"Amount of times! {amount_of_times_triggered}")
             if(amount_of_times_triggered < number_of_times_effect_can_trigger and champion.health <= champion.total_health * effect_trigger_percentage_health):
                 print(f"Start BT shield! {current_simulation_time}")
@@ -49,12 +49,12 @@ def get_bloodthirster_effect_end():
         max_health_shield_percentage = 0.25
 
         # handle effect end
-        if(simulation_step == Simulation_Step.OnStatusUpdate):
+        if(simulation_step == Simulation_Step.OnEndStatusUpdate):
             if(amount_of_times_triggered < 1 and item.effects[0][2] > 0 and current_simulation_time >= item.effects[0][2] + effect_duration_time):
                 champion.shield -= max_health_shield_percentage * champion.total_health
                 if(champion.shield < 0):
                     champion.shield = 0
-                print(f"End BT shield! {current_simulation_time}")
+                # print(f"End BT shield! {current_simulation_time}")
                 return 1, current_simulation_time 
         return 0, -1
             

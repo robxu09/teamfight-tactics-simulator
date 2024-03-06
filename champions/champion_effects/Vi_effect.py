@@ -71,7 +71,7 @@ def get_Vi_effect3():
 
         ultimate_cast_duration = 0.1
 
-        if(simulation_step == Simulation_Step.OnStatusUpdate):
+        if(simulation_step == Simulation_Step.OnStartStatusUpdate):
             
             # print(f"Vi checks if ulting. {champion.effects[ultimate_effect_number][2]}")
             if(current_simulation_time <= champion.effects[ultimate_effect_number][2] + ultimate_cast_duration):

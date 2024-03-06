@@ -99,8 +99,22 @@ class Champion:
 
     # CHAMPION MAIN ACTIONS to be performed in simulation loop
 
-    # each champion must check and update status every iteration of simulation
-    def update_status(self, enemy_champion):
+    # each champion must check and update status at start of every iteration of simulation
+    def update_status_start(self, enemy_champion):
+
+        # check if can cast ultimate
+        self.can_cast_ultimate = True if self.mana >= self.mana_to_cast else False
+
+        # update current armor and mr after sunder and shred
+        self.armor_after_sunder = self.calculate_armor_after_sunder()
+        # print(f"{self.name} armor_after_sunder: {self.armor_after_sunder}")
+        self.magic_resist_after_shred = self.calculate_magic_resist_after_shred()
+        
+        self.activate_effects(Simulation_Step.OnStartStatusUpdate, enemy_champion, 0)
+
+    # each champion must check and update status at end of every iteration of simulation
+    # handles wiping of effects
+    def update_status_end(self, enemy_champion):
 
         # check if can cast ultimate
         self.can_cast_ultimate = True if self.mana >= self.mana_to_cast else False
@@ -109,8 +123,7 @@ class Champion:
         self.armor_after_sunder = self.calculate_armor_after_sunder()
         self.magic_resist_after_shred = self.calculate_magic_resist_after_shred()
         
-        self.activate_effects(Simulation_Step.OnStatusUpdate, enemy_champion, 0)
-
+        self.activate_effects(Simulation_Step.OnEndStatusUpdate, enemy_champion, 0)
 
     def autoattack_if_possible(self, target):
         # can't attack if conditions
@@ -130,11 +143,9 @@ class Champion:
         # activate any effects that happen On Autoattack
         self.activate_effects(Simulation_Step.BeforeAutoAttack, target, 0)
 
-        # total AD applied
+
         # base AD with average crit bonus against opponent armor
-        AD_attack_amount = self.attack_damage
-        AD_attack_amount += self.calculate_bonus_critical_strike_damage(AD_attack_amount)
-        AD_attack_amount = self.calculate_physical_damage_after_armor(AD_attack_amount, target)
+        AD_attack_amount = self.calculate_total_attack_damage_done(self.attack_damage, target, True)
 
         self.deal_damage(target, AD_attack_amount)
 
@@ -167,7 +178,7 @@ class Champion:
 
         self.activate_effects(Simulation_Step.BeforeDealDamage, target, amount)
 
-        # print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
+        print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
         target.take_damage(amount)
 
         # apply omnivamp
@@ -272,6 +283,24 @@ class Champion:
                     # print(f"when_triggered {effect[2]}")
 
     # HELPER CALCULATIONS
+
+    # helper functions for calculating total AD damage
+    # base AD with average crit bonus against opponent armor
+    def calculate_total_attack_damage_done(self, damage, target, can_crit=False):
+        AD_attack_amount = damage
+        if can_crit:
+            AD_attack_amount += self.calculate_bonus_critical_strike_damage(AD_attack_amount)
+        AD_attack_amount = self.calculate_physical_damage_after_armor(AD_attack_amount, target)
+        return AD_attack_amount
+    
+        # helper functions for calculating total AD damage
+    # base AD with average crit bonus against opponent armor
+    def calculate_total_magic_damage_done(self, damage, target, can_crit=False):
+        AP_attack_amount = damage
+        if can_crit:
+            AP_attack_amount += self.calculate_bonus_critical_strike_damage(AP_attack_amount)
+        AP_attack_amount = self.calculate_magic_damage_after_magic_resist(AP_attack_amount, target)
+        return AP_attack_amount
 
     # helper functions for calculating damage after resistances
     def calculate_physical_damage_after_armor(self, damage, enemy_champion):
