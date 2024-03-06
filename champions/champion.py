@@ -1,7 +1,7 @@
 # entities/champion.py
 import copy
 
-from constants import SIMULATION_TICK_SPEED
+from constants import SIMULATION_TICK_SPEED, SIMULATION_TICK_SPEED_DECIMALS
 
 from simulation_system.simulation_steps import Simulation_Step
 
@@ -104,12 +104,6 @@ class Champion:
     # each champion must check and update status at start of every iteration of simulation
     def update_status_start(self, enemy_champion):
 
-        if(self.stun_time > 0):
-            print(f"{self.name} is stunned for {round(self.stun_time,1)} more seconds!")
-        
-        # if(self.burn_time > 0):
-            # print(f"{self.name} is burning for {round(self.burn_time, 1)} more seconds! {self.burn_amount} of max health per second")
-
         # check if can cast ultimate
         self.can_cast_ultimate = True if self.mana >= self.mana_to_cast else False
 
@@ -142,11 +136,9 @@ class Champion:
         else:
             self.stun_time = 0
 
-        print(f"self.burn_time: {self.burn_time}")
         # receive burn damage
-        if(self.burn_time > 0 and round(self.burn_time,2) % 1 == 0):
+        if(self.burn_time > 0 and round(self.burn_time, SIMULATION_TICK_SPEED_DECIMALS) % 1 == 0):
             enemy_champion.deal_burn_damage(self)
-            print("get burned!AAAAAAA")
 
         # tick down burn time
         if(self.burn_time > 0):
