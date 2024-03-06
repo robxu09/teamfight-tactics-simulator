@@ -68,13 +68,43 @@ def get_Vi_ultimate():
         if(simulation_step == Simulation_Step.OnCastUltimate):
             # gets paused for 1 second after ultimate cast (takes that long to cast)
             # alternate between hugs and kisses
-            if(int(amount_of_times_triggered % 2) == 0):
-                # print(f"Vi gives a hug to {enemy_champion.name}. This is cast number {amount_of_times_triggered+1}")
-                pass
+
+
+            #                Stun Duration: 1.5 / 1.75 / 2
+            #     Armor Reduction: 15% / 18% / 20%
+            percentage_reduce_armor = 0
+            stun_time = 0
+
+            if(champion.star_level == 3):
+                percentage_reduce_armor = 0.2
+                stun_time = 2
+            elif(champion.star_level == 2):
+                percentage_reduce_armor = 0.18
+                stun_time = 1.75
             else:
-                # print(f"Vi gives a kiss to {enemy_champion.name}. This is cast number {amount_of_times_triggered+1}")
-                pass
-            
+                percentage_reduce_armor = 0.15
+                stun_time = 1.5
+
+            # stun and reduce armor
+            enemy_champion.set_armor(enemy_champion.armor * (1 - percentage_reduce_armor))
+
+            enemy_champion.set_stun_time(stun_time)
+
+            enemy_champion.become_burned(0.01, stun_time * 2)
+
+            # deal Deal 330 percentage Attack Damage physical damage to the current target, or 450 percent of AD physical damage 
+            #    if they have more current Health than Vi. Stun them and reduce their Armor for the rest of combat.
+            dmg_to_do = 3.3 * champion.attack_damage
+            if (champion.health < enemy_champion.health):
+
+                dmg_to_do = 4.5 * champion.attack_damage
+
+            dmg_to_do = champion.calculate_total_attack_damage_done(dmg_to_do, enemy_champion, champion.can_crit_ult)
+
+            champion.deal_damage(enemy_champion, dmg_to_do)
+
+            # cast time
+
             champion.is_mana_locked = True
             champion.is_casting_ultimate = True
 

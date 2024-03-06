@@ -2,8 +2,7 @@
 from simulation_system.simulation_steps import Simulation_Step
 
 def get_last_whisperer_description():
-        effect_description = """Gain 20% Omnivamp.
-                Once per combat at 40% Health, gain a 25% max Health Shield that lasts up to 5 seconds."""""
+        effect_description = """Physical damage 30% Sunders the target for 3 seconds. This effect does not stack."""""
                 
         return effect_description
 
@@ -50,7 +49,7 @@ def get_last_whisperer_effect_end():
 
         # handle effect end
         if(simulation_step == Simulation_Step.OnEndStatusUpdate):
-            
+
             if(activation_time > 0 and current_simulation_time >= activation_time + effect_duration_time and activation_time > most_recent_previous_trigger_time):
 
                 enemy_champion.set_sunder_amount(0)

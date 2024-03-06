@@ -64,6 +64,7 @@ class Champion:
         self.health = self.total_health
         self.armor_after_sunder = self.armor * (1 - self.sunder_amount)
         self.magic_resist_after_shred = self.magic_resist * (1 - self.shred_amount)
+        self.can_crit_ult = False
 
         # ITEMS
 
@@ -78,7 +79,8 @@ class Champion:
         # FUNCTIONAL COMBAT STATUS DETAILS
 
         self.can_cast_ultimate = False
-        self.is_paused = False
+        self.stun_time = 0
+        self.burn_time = 0
         self.attack_wait_timer = 0
         self.mana = self.starting_mana
         self.is_casting_ultimate = False
@@ -102,6 +104,12 @@ class Champion:
     # each champion must check and update status at start of every iteration of simulation
     def update_status_start(self, enemy_champion):
 
+        if(self.stun_time > 0):
+            print(f"{self.name} is stunned for {round(self.stun_time,1)} more seconds!")
+        
+        # if(self.burn_time > 0):
+            # print(f"{self.name} is burning for {round(self.burn_time, 1)} more seconds! {self.burn_amount} of max health per second")
+
         # check if can cast ultimate
         self.can_cast_ultimate = True if self.mana >= self.mana_to_cast else False
 
@@ -110,7 +118,12 @@ class Champion:
         # print(f"{self.name} armor_after_sunder: {self.armor_after_sunder}")
         self.magic_resist_after_shred = self.calculate_magic_resist_after_shred()
         
+        # activate relevant effects
         self.activate_effects(Simulation_Step.OnStartStatusUpdate, enemy_champion, 0)
+
+        # apply burn damage
+        if(self.burn_amount > 0 and (self.timer.current_time) % (1 / SIMULATION_TICK_SPEED) == 0):
+            enemy_champion.deal_burn_damage(self)
 
     # each champion must check and update status at end of every iteration of simulation
     # handles wiping of effects
@@ -122,12 +135,30 @@ class Champion:
         # update current armor and mr after sunder and shred
         self.armor_after_sunder = self.calculate_armor_after_sunder()
         self.magic_resist_after_shred = self.calculate_magic_resist_after_shred()
+
+        # tick down stun time
+        if(self.stun_time > 0):
+            self.stun_time -= SIMULATION_TICK_SPEED
+        else:
+            self.stun_time = 0
+
+        print(f"self.burn_time: {self.burn_time}")
+        # receive burn damage
+        if(self.burn_time > 0 and round(self.burn_time,2) % 1 == 0):
+            enemy_champion.deal_burn_damage(self)
+            print("get burned!AAAAAAA")
+
+        # tick down burn time
+        if(self.burn_time > 0):
+            self.burn_time -= SIMULATION_TICK_SPEED
+        else:
+            self.burn_time = 0
         
         self.activate_effects(Simulation_Step.OnEndStatusUpdate, enemy_champion, 0)
 
     def autoattack_if_possible(self, target):
         # can't attack if conditions
-        if (self.is_casting_ultimate == False and self.is_paused == False):
+        if (self.is_casting_ultimate == False and self.stun_time <= 0):
             # wait for ability to attack
             if(self.attack_wait_timer >= (1 / self.attack_speed)):
 
@@ -159,7 +190,7 @@ class Champion:
 
     def cast_ultimate_if_possible(self, target):
         
-        if (self.is_paused == False):
+        if (self.stun_time <= 0):
             #check if ultimate is castable
             if(self.can_cast_ultimate):
                 # Implement the logic for casting an ultimate
@@ -178,7 +209,7 @@ class Champion:
 
         self.activate_effects(Simulation_Step.BeforeDealDamage, target, amount)
 
-        # print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
+        print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
         target.take_damage(amount)
 
         # apply omnivamp
@@ -203,6 +234,9 @@ class Champion:
     def deal_healing(self, target, amount):
         target.heal(amount)
         # print(f"{self.name} heals {target.name} for {round(amount,3)} health!")
+    
+    def deal_burn_damage(self, target):
+        self.deal_damage(target, (target.burn_amount * target.total_health))
 
     def take_damage(self, amount):
 
@@ -216,17 +250,20 @@ class Champion:
         self.health -= amount
         if self.health < 0:
             self.health = 0
-        # print(f"{self.name} takes {round(amount,3)} damage!")
+        print(f"!{self.name} takes {round(amount,3)} damage!")
 
     def heal(self, amount):
+        amount = amount * (1-self.wound_amount)
         self.health += amount
         # print(f"{self.name} is healed for {round(amount,3)} health!")
 
     def apply_omnivamp(self, amount):
         self.heal(amount*self.omnivamp)
 
-    def become_burned(self, amount):
+    def become_burned(self, amount, time):
         self.burn_amount = amount
+        self.burn_time = time
+        print(f"get burned {self.burn_time}")
         pass
 
     def become_sundered(self, amount):
@@ -370,6 +407,8 @@ class Champion:
         else:
             self.shred_amount = amount
 
+    def set_stun_time(self, amount):
+        self.stun_time = max(amount, self.stun_time)
 
     def set_critical_strike_chance(self, amount):
         if(amount >= 1.0):
