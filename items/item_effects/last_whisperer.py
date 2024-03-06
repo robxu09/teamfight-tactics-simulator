@@ -1,22 +1,22 @@
-# items.item_effects.bloodthirster_effect
+# items.item_effects.last_whisperer_effect
 from simulation_system.simulation_steps import Simulation_Step
 
-def get_bloodthirster_effect_description():
+def get_last_whisperer_description():
         effect_description = """Gain 20% Omnivamp.
                 Once per combat at 40% Health, gain a 25% max Health Shield that lasts up to 5 seconds."""""
                 
         return effect_description
 
-def get_bloodthirster_effects():
+def get_last_whisperer_effects():
      
     effects = []
 
-    effects.append(get_bloodthirster_effect)
-    effects.append(get_bloodthirster_effect_end)
+    effects.append(get_last_whisperer_effect)
+    effects.append(get_last_whisperer_effect_end)
     
     return effects
 
-def get_bloodthirster_effect():
+def get_last_whisperer_effect():
 
     # data is used to pass in inputs for effects
     # returns didtrigger, triggertime
@@ -41,7 +41,7 @@ def get_bloodthirster_effect():
 
     return effect
 
-def get_bloodthirster_effect_end():
+def get_last_whisperer_effect_end():
     
     def effect(simulation_step, champion, enemy_champion, item, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
         # print(f"{current_simulation_time}")
