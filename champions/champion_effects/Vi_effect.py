@@ -21,16 +21,16 @@ def get_Vi_effects():
      
     effects = []
 
-    # effects.append(get_Vi_effect)
-    # effects.append(get_Vi_effect2)
-    effects.append(get_Vi_effect3)
     effects.append(get_Vi_ultimate)
+    effects.append(get_Vi_ultimate_end)
+    # effects.append(get_Vi_passive_1)
+    # effects.append(get_Vi_passive_2)
     
     return effects
 
 # didtrigger: 1 -> start trigger, 0 -> no trigger, -1 -> end trigger
 # triggertime: time of start-trigger. on end/no trigger set back to -1
-def get_Vi_effect():
+def get_Vi_passive_1():
 
     # data is used to pass in inputs for effects
     def effect(simulation_step, champion, enemy_champion, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
@@ -45,7 +45,7 @@ def get_Vi_effect():
 
     return effect
 
-def get_Vi_effect2():
+def get_Vi_passive_2():
 
     # data is used to pass in inputs for effects
     def effect(simulation_step, champion, enemy_champion, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
@@ -60,35 +60,6 @@ def get_Vi_effect2():
 
     return effect
 
-def get_Vi_effect3():
-
-    # data is used to pass in inputs for effects
-    def effect(simulation_step, champion, enemy_champion, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
-
-        # the order in which the relevant ability is added to effects before being given to champion
-        # need to get it's previous cast time
-        ultimate_effect_number = 1
-
-        ultimate_cast_duration = 0.1
-
-        if(simulation_step == Simulation_Step.OnStartStatusUpdate):
-            
-            # print(f"Vi checks if ulting. {champion.effects[ultimate_effect_number][2]}")
-            if(current_simulation_time <= champion.effects[ultimate_effect_number][2] + ultimate_cast_duration):
-                champion.is_mana_locked = True
-                champion.is_casting_ultimate = True
-                # print(f"{champion.name} is casting ultimate. {round(champion.effects[ultimate_effect_number][2] + ultimate_cast_duration - current_simulation_time,2)} seconds left")
-
-            else:
-                champion.is_mana_locked = False
-                champion.is_casting_ultimate = False
-
-                return 1, current_simulation_time
-
-        
-        return 0, -1
-
-    return effect
 
 def get_Vi_ultimate():
     # data is used to pass in inputs for effects
@@ -114,3 +85,33 @@ def get_Vi_ultimate():
         return 0, -1
     
     return ultimate
+
+def get_Vi_ultimate_end():
+
+    # data is used to pass in inputs for effects
+    def effect(simulation_step, champion, enemy_champion, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
+
+        # the order in which the relevant ability is added to effects before being given to champion
+        # need to get it's previous cast time
+        ultimate_effect_number = 0
+        ultimate_activation_time = champion.effects[ultimate_effect_number][2]
+        ultimate_cast_duration = 0.1
+
+        if(simulation_step == Simulation_Step.OnStartStatusUpdate):
+            
+            # print(f"Vi checks if ulting. {champion.effects[ultimate_effect_number][2]}")
+            if(current_simulation_time <= ultimate_activation_time + ultimate_cast_duration):
+                champion.is_mana_locked = True
+                champion.is_casting_ultimate = True
+                # print(f"{champion.name} is casting ultimate. {round(champion.effects[ultimate_effect_number][2] + ultimate_cast_duration - current_simulation_time,2)} seconds left")
+
+            else:
+                champion.is_mana_locked = False
+                champion.is_casting_ultimate = False
+
+                return 1, current_simulation_time
+
+        
+        return 0, -1
+
+    return effect

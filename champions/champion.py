@@ -178,7 +178,7 @@ class Champion:
 
         self.activate_effects(Simulation_Step.BeforeDealDamage, target, amount)
 
-        print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
+        # print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
         target.take_damage(amount)
 
         # apply omnivamp
@@ -195,7 +195,7 @@ class Champion:
     # dealing bonus damage. (does not count as a hit. it's extra damage from a previous hit)
     def deal_bonus_damage(self, target, amount):
         target.take_damage(amount)
-        print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
+        # print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
 
         # apply omnivamp
         self.apply_omnivamp(amount)

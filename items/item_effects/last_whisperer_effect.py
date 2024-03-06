@@ -11,12 +11,12 @@ def get_last_whisperer_effects():
      
     effects = []
 
-    effects.append(get_last_whisperer_effect)
+    effects.append(get_last_whisperer_effect_activation)
     effects.append(get_last_whisperer_effect_end)
     
     return effects
 
-def get_last_whisperer_effect():
+def get_last_whisperer_effect_activation():
 
     # data is used to pass in inputs for effects
     # returns didtrigger, triggertime
@@ -30,7 +30,7 @@ def get_last_whisperer_effect():
         # handle effect trigger start
         if(simulation_step == Simulation_Step.BeforeDealDamage):
             
-            print(f"sunder! {current_simulation_time}")
+            # print(f"sunder! {current_simulation_time}")
             enemy_champion.set_sunder_amount(sunder_percentage)
 
             return 1, current_simulation_time  
@@ -50,6 +50,7 @@ def get_last_whisperer_effect_end():
 
         # handle effect end
         if(simulation_step == Simulation_Step.OnEndStatusUpdate):
+            
             if(activation_time > 0 and current_simulation_time >= activation_time + effect_duration_time and activation_time > most_recent_previous_trigger_time):
 
                 enemy_champion.set_sunder_amount(0)

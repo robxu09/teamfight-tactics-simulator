@@ -26,7 +26,7 @@ def main():
 
     # give items to champion 1
     # champion1.add_items(Deathblade)
-    champion1.add_items(LW)
+    champion1.add_items(Bloodthirster)
     champion1.add_items(LW)
 
     # give items to champion 2
