@@ -138,7 +138,7 @@ class Champion:
 
         # receive burn damage
         if(self.burn_time > 0 and round(self.burn_time, SIMULATION_TICK_SPEED_DECIMALS) % 1 == 0):
-            enemy_champion.deal_burn_damage(self)
+            self.take_burn_damage()
 
         # tick down burn time
         if(self.burn_time > 0):
@@ -227,8 +227,8 @@ class Champion:
         target.heal(amount)
         # print(f"{self.name} heals {target.name} for {round(amount,3)} health!")
     
-    def deal_burn_damage(self, target):
-        self.deal_damage(target, (target.burn_amount * target.total_health))
+    def take_burn_damage(self):
+        self.take_damage(self.burn_amount * self.total_health)
 
     def take_damage(self, amount):
 
@@ -242,7 +242,7 @@ class Champion:
         self.health -= amount
         if self.health < 0:
             self.health = 0
-        print(f"!{self.name} takes {round(amount,3)} damage!")
+        print(f"{self.name} takes {round(amount,3)} damage!")
 
     def heal(self, amount):
         amount = amount * (1-self.wound_amount)
@@ -255,7 +255,7 @@ class Champion:
     def become_burned(self, amount, time):
         self.burn_amount = amount
         self.burn_time = time
-        print(f"get burned {self.burn_time}")
+        # print(f"get burned {self.burn_time}")
         pass
 
     def become_sundered(self, amount):
