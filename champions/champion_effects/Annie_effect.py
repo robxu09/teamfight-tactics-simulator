@@ -1,68 +1,69 @@
-# champions.champion_effects.Vi_effect
+# champions.champion_effects.Annie_effect
 from simulation_system.simulation_steps import Simulation_Step
 
-def get_Vi_description():
-        description = """Active mana cost 40 / 70
-                Deal 330 percentage Attack Damage physical damage to the current target, or 450 percent of AD physical damage 
-                if they have more current Health than Vi. Stun them and reduce their Armor for the rest of combat.
+def get_Annie_description():
+        description = """Passive: After 4 casts, gain 40% Attack Speed and casts deal 80/120/180 () magic damage to another nearby enemy.
 
-                Headliner Effect: +200 Health, +15 percent AD
-
-                Stun Duration: 1.5 / 1.75 / 2
-                Armor Reduction: 15% / 18% / 20%"""
+Active: Deal 220/330/495 () magic damage to the current target."""
         
         return description
 
 # create effect specifically to trigger end of ultimate cast.
 # create multiple effects and put in list
-# create get_Vi_effects():
+# create get_Annie_effects():
 
-def get_Vi_effects():
+def get_Annie_effects():
      
     effects = []
 
-    effects.append(get_Vi_ultimate)
-    effects.append(get_Vi_ultimate_end)
-
+    effects.append(get_Annie_ultimate)
+    effects.append(get_Annie_ultimate_end)
+    
     return effects
 
+# didtrigger: 1 -> start trigger, 0 -> no trigger, -1 -> end trigger
+# triggertime: time of start-trigger. on end/no trigger set back to -1
 
-def get_Vi_ultimate():
+
+def get_Annie_ultimate():
     # data is used to pass in inputs for effects
     def ultimate(simulation_step, champion, enemy_champion, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
 
         if(simulation_step == Simulation_Step.OnCastUltimate):
-            #     Stun Duration: 1.5 / 1.75 / 2
-            #     Armor Reduction: 15% / 18% / 20%
-            percentage_reduce_armor = 0
-            stun_time = 0
+
+            # 220/330/495
+
+            dmg_to_do = 0
+            bonus_dmg_to_do = 0
+
+            amount_of_times_before_bonus = 4
 
             if(champion.star_level == 3):
-                percentage_reduce_armor = 0.2
-                stun_time = 2
+                dmg_to_do = 495
+                bonus_dmg_to_do = 180
             elif(champion.star_level == 2):
-                percentage_reduce_armor = 0.18
-                stun_time = 1.75
+                dmg_to_do = 330
+                bonus_dmg_to_do = 120
             else:
-                percentage_reduce_armor = 0.15
-                stun_time = 1.5
+                dmg_to_do = 220
+                bonus_dmg_to_do = 80
 
-            # stun and reduce armor
-            enemy_champion.set_armor(enemy_champion.armor * (1 - percentage_reduce_armor))
 
-            enemy_champion.set_stun_time(stun_time)
 
-            # deal Deal 330 percentage Attack Damage physical damage to the current target, or 450 percent of AD physical damage 
-            #    if they have more current Health than Vi. Stun them and reduce their Armor for the rest of combat.
-            dmg_to_do = 3.3 * champion.attack_damage
-            if (champion.health < enemy_champion.health):
-
-                dmg_to_do = 4.5 * champion.attack_damage
-
-            dmg_to_do = champion.calculate_total_attack_damage_done(dmg_to_do, enemy_champion, champion.can_crit_ult)
+            dmg_to_do = champion.calculate_total_magic_damage_done(dmg_to_do, enemy_champion, champion.can_crit_ult)
 
             champion.deal_damage(enemy_champion, dmg_to_do)
-            print(f"{champion.name} casted")
+            # print(f"{champion.name} casted {amount_of_times_triggered} times before this")
+
+            if (amount_of_times_triggered >= amount_of_times_before_bonus):
+                # print("bonus cast")
+
+                # implement bonus damage
+                bonus_dmg_to_do = champion.calculate_total_magic_damage_done(bonus_dmg_to_do, enemy_champion, champion.can_crit_ult)
+
+                champion.deal_damage(enemy_champion, bonus_dmg_to_do)
+
+                pass
 
             # cast time
 
@@ -77,7 +78,7 @@ def get_Vi_ultimate():
     
     return ultimate
 
-def get_Vi_ultimate_end():
+def get_Annie_ultimate_end():
 
     # data is used to pass in inputs for effects
     def effect(simulation_step, champion, enemy_champion, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
@@ -90,7 +91,7 @@ def get_Vi_ultimate_end():
 
         if(simulation_step == Simulation_Step.OnStartStatusUpdate):
             
-            # print(f"Vi checks if ulting. {champion.effects[ultimate_effect_number][2]}")
+            # print(f"Annie checks if ulting. {champion.effects[ultimate_effect_number][2]}")
             if(current_simulation_time <= ultimate_activation_time + ultimate_cast_duration):
                 champion.is_mana_locked = True
                 champion.is_casting_ultimate = True

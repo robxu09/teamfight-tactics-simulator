@@ -13,7 +13,6 @@ class OneVsOne:
 
         # create timer
         timer = self.start_up_set_up(champion1, champion2, time_in_seconds)
-
         # one tick is .05 seconds
         while(timer.current_time < timer.end_time):
 
@@ -43,7 +42,7 @@ class OneVsOne:
             champion1.update_status_end(champion2)
             champion2.update_status_end(champion1)
             
-            print(f"Timer: {round(timer.current_time,2)}")
+            # print(f"Timer: {round(timer.current_time,2)}")
             # increment simulation timer
             timer.increment_timer()
 
