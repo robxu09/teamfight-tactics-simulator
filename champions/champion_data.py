@@ -8,10 +8,12 @@ from champions.champion_effects.Vi_effect import get_Vi_effects, get_Vi_descript
 # Function to create Champion objects with predefined data
 def create_champions():
     champions = {
-        "Tahm Kench": Champion(name="Tahm Kench", health=650, attack_damage=70, armor=40, attack_speed=0.55, starting_mana=0, 
-                               mana_to_cast=sys.maxsize, mana_gained_on_hit=0, mana_gained_on_attack=0),
-        "Vi": Champion(name="Vi", health=650, attack_damage=55, armor=45, attack_speed=0.6, starting_mana=40, mana_to_cast=70, 
-                       mana_gained_on_attack=10, mana_gained_on_hit=1, description=get_Vi_description),
+        "Annie": Champion(name="Annie", health=450, starting_mana=0, mana_to_cast=50, attack_damage=40, ability_power=100, armor=20, 
+                        magic_resist=20, attack_speed=0.65),
+        "Tahm Kench": Champion(name="Tahm Kench", health=650, starting_mana=0, mana_to_cast=sys.maxsize, attack_damage=88, ability_power=100, 
+                        armor=40, magic_resist=40, attack_speed=0.55),
+        "Vi": Champion(name="Vi", health=650, starting_mana=40, mana_to_cast=70, attack_damage=45, ability_power=45, armor=45, magic_resist=45, 
+                        attack_speed=0.6, description=get_Vi_description),
     }
 
     # pass effect to champions

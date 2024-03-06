@@ -10,8 +10,8 @@ class Champion:
                  health=0, attack_damage=0, ability_power=0, armor=0,
                  magic_resist=0, starting_mana=0, mana_to_cast=0,
                  attack_speed=0, critical_strike_chance=0.25, critical_strike_damage=1.4,
-                 attack_range=0, omnivamp=0, shield=0, mana_gained_on_hit=0,
-                 mana_gained_on_attack=0, description=""):
+                 attack_range=0, omnivamp=0, shield=0, mana_gained_on_hit=1,
+                 mana_gained_on_attack=10, description=""):
         
         self.name = name
         self.star_level = star_level

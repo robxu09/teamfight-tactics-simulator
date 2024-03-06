@@ -90,8 +90,6 @@ def get_Vi_ultimate():
 
             enemy_champion.set_stun_time(stun_time)
 
-            enemy_champion.become_burned(0.01, stun_time * 2)
-
             # deal Deal 330 percentage Attack Damage physical damage to the current target, or 450 percent of AD physical damage 
             #    if they have more current Health than Vi. Stun them and reduce their Armor for the rest of combat.
             dmg_to_do = 3.3 * champion.attack_damage
