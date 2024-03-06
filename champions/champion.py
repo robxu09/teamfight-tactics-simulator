@@ -11,7 +11,7 @@ class Champion:
                  magic_resist=0, starting_mana=0, mana_to_cast=0,
                  attack_speed=0, critical_strike_chance=0.25, critical_strike_damage=1.4,
                  attack_range=0, omnivamp=0, shield=0, mana_gained_on_hit=1,
-                 mana_gained_on_attack=10, description=""):
+                 mana_gained_on_attack=10, can_crit_ult_default=False, description=""):
         
         self.name = name
         self.star_level = star_level
@@ -36,6 +36,7 @@ class Champion:
         self.original_attack_damage = attack_damage
         self.original_attack_speed = attack_speed
         self.original_total_health = health
+        self.can_crit_ult_default = can_crit_ult_default
 
         # basic combat stats
         self.total_health = health
@@ -64,7 +65,7 @@ class Champion:
         self.health = self.total_health
         self.armor_after_sunder = self.armor * (1 - self.sunder_amount)
         self.magic_resist_after_shred = self.magic_resist * (1 - self.shred_amount)
-        self.can_crit_ult = False
+        self.can_crit_ult = self.can_crit_ult_default
 
         # ITEMS
 
