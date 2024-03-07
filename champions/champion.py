@@ -4,6 +4,7 @@ import copy
 from constants import SIMULATION_TICK_SPEED, SIMULATION_TICK_SPEED_DECIMALS
 
 from simulation_system.simulation_steps import Simulation_Step
+from champions.champion_stat_tracker import ChampionStatTracker
 
 class Champion:
     def __init__(self, name, star_level=1, health=0, attack_damage=0, ability_power=0, armor=0,
@@ -12,6 +13,8 @@ class Champion:
         self.name = name
         self.star_level = star_level
         self.traits = traits
+
+        self.stat_tracker = ChampionStatTracker(self)
 
         # EFFECTS
 
@@ -47,7 +50,7 @@ class Champion:
         self.critical_strike_chance = 0.25
         self.critical_strike_damage = 1.4
         self.attack_range = attack_range
-        
+
         self.outgoing_damage_amp_percentage = 0
         self.incoming_damage_reduction_percentage = 0
 

@@ -47,10 +47,8 @@ def get_Vi_ultimate():
             dmg_to_do = champion.calculate_total_attack_damage_done(dmg_to_do, enemy_champion, champion.can_crit_ult)
 
             champion.deal_damage(enemy_champion, dmg_to_do, dmg_type)
-            print(f"{champion.name} casted")
 
             # cast time
-
             champion.is_mana_locked = True
             champion.is_casting_ultimate = True
 

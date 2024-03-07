@@ -42,8 +42,6 @@ def get_Annie_ultimate():
                 dmg_to_do *= 220
                 bonus_dmg_to_do *= 80
 
-
-            print(f"{champion.can_crit_ult} can crit ult")
             dmg_to_do = champion.calculate_total_magic_damage_done(dmg_to_do, enemy_champion, champion.can_crit_ult)
 
             champion.deal_damage(enemy_champion, dmg_to_do, dmg_type)
