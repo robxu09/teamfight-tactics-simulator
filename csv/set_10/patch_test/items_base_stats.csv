@@ -1,0 +1,46 @@
+Name,Description,Is Component,Attack Damage,Ability Power,Armor,Magic Resist,Health,Mana,Attack Speed,Critical Strike Chance
+B. F. Sword,,TRUE,0.1,0,0,0,0,0,0,0
+Chain Vest,,TRUE,0,0,20,0,0,0,0,0
+Giant's Belt,,TRUE,0,0,0,0,150,0,0,0
+Needlessly Large Rod,,TRUE,0,10,0,0,0,0,0,0
+Negatron Cloak,,TRUE,0,0,0,20,0,0,0,0
+Recurve Bow,,TRUE,0,0,0,0,0,0,0.1,0
+Sparring Gloves,,TRUE,0,0,0,0,0,0,0,0.2
+Tear of the Goddess,,TRUE,0,0,0,0,0,15,0,0
+Spatula,,TRUE,0,0,0,0,0,0,0,0
+Adaptive Helm,,FALSE,0,15,0,20,0,15,0,0
+Archangel's Staff,,FALSE,0,20,0,0,0,15,0,0
+Bloodthirster,,FALSE,0.2,15,0,20,0,0,0,0
+Blue Buff,,FALSE,0.2,20,0,0,0,20,0,0
+Bramble Vest,,FALSE,0,0,55,0,0,0,0,0
+Crownguard,,FALSE,0,20,20,0,100,0,0,0
+Deathblade,,FALSE,0.55,0,0,0,0,0,0,0
+Dragon's Claw,,FALSE,0,0,0,65,0,0,0,0
+Edge of Night,,FALSE,0.1,0,20,0,0,0,0,0
+Evenshroud,,FALSE,0,0,0,20,150,0,0,0
+Gargoyle Stoneplate,,FALSE,0,0,35,35,100,0,0,0
+Giant Slayer,,FALSE,0.3,20,0,0,0,0,0.1,0
+Guardbreaker,,FALSE,0,10,0,0,150,0,0.2,0.2
+Guinsoo's Rageblade,,FALSE,0,10,0,0,0,0,0.15,0
+Hand of Justice,,FALSE,0,0,0,0,0,15,0,0.2
+Hextech Gunblade,,FALSE,0.15,15,0,0,0,0,0,0
+Infinity Edge,,FALSE,0.35,0,0,0,0,0,0,0.35
+Ionic Spark,,FALSE,0,15,0,25,200,0,0,0
+Jeweled Gauntlet,,FALSE,0,35,0,0,0,0,0,0.35
+Last Whisperer,,FALSE,0.15,0,0,0,0,0,0.25,0.2
+Morellonomicon,,FALSE,0,25,0,0,150,0,0.15,0
+Nashor's Tooth,,FALSE,0,30,0,0,150,0,0.3,0
+Protector's Vow,,FALSE,0,0,20,0,0,20,0,0
+Quicksilver,,FALSE,0,0,0,20,0,0,0.3,0.2
+Rabadon's Deathcap,,FALSE,0,50,0,0,0,0,0,0
+Red Buff,,FALSE,0,0,0,0,0,0,0.4,0
+Redemption,,FALSE,0,0,0,0,150,15,0,0
+Runaan's Hurricane,,FALSE,0.25,0,0,20,0,0,0.1,0
+Spear of Shojin,,FALSE,0.2,20,0,0,0,15,0,0
+Statikk Shiv,,FALSE,0,15,0,0,0,15,0.2,0
+Steadfast Heart,,FALSE,0,0,20,0,250,0,0,0.2
+Sterak's Gage,,FALSE,0.15,0,0,0,200,0,0,0
+Sunfire Cape,,FALSE,0,0,20,0,250,0,0,0
+Thief's Gloves,,FALSE,0,0,0,0,150,0,0,0.2
+Titan's Resolve,,FALSE,0.1,0,20,0,0,0,0,0
+Warmog's Armor,,FALSE,0,0,0,0,600,0,0,0

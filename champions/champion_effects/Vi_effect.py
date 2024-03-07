@@ -1,22 +1,6 @@
 # champions.champion_effects.Vi_effect
 from simulation_system.simulation_steps import Simulation_Step
 
-def get_Vi_description():
-        description = """Active mana cost 40 / 70
-                Deal 330 percentage Attack Damage physical damage to the current target, or 450 percent of AD physical damage 
-                if they have more current Health than Vi. Stun them and reduce their Armor for the rest of combat.
-
-                Headliner Effect: +200 Health, +15 percent AD
-
-                Stun Duration: 1.5 / 1.75 / 2
-                Armor Reduction: 15% / 18% / 20%"""
-        
-        return description
-
-# create effect specifically to trigger end of ultimate cast.
-# create multiple effects and put in list
-# create get_Vi_effects():
-
 def get_Vi_effects():
      
     effects = []

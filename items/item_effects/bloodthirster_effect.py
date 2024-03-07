@@ -1,18 +1,13 @@
 # items.item_effects.bloodthirster_effect
 from simulation_system.simulation_steps import Simulation_Step
 
-def get_bloodthirster_effect_description():
-        effect_description = """Gain 20% Omnivamp.
-                Once per combat at 40% Health, gain a 25% max Health Shield that lasts up to 5 seconds."""""
-                
-        return effect_description
-
 def get_bloodthirster_effects():
      
     effects = []
 
     effects.append(get_bloodthirster_effect_activation)
     effects.append(get_bloodthirster_effect_end)
+    effects.append(get_bloodthirster_effect_passive)
     
     return effects
 
@@ -63,4 +58,22 @@ def get_bloodthirster_effect_end():
             
         return 0, most_recent_previous_trigger_time
             
+    return effect
+
+def get_bloodthirster_effect_passive():
+
+    # data is used to pass in inputs for effects
+    def effect(simulation_step, champion, enemy_champion, item, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
+
+        if(simulation_step == Simulation_Step.OnInitiation):
+
+            omnivamp_bonus = 0.2
+
+            champion.can_crit_ult = True
+            if(champion.can_crit_ult_default == True):
+                champion.omnivamp += omnivamp_bonus
+            return 1, current_simulation_time
+
+        return 0, -1             
+
     return effect

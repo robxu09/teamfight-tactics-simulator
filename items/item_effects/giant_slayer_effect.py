@@ -1,10 +1,6 @@
 # items.item_effects.giant_slayer_effect
 from simulation_system.simulation_steps import Simulation_Step
 
-def get_giant_slayer_effect_description():
-        effect_description = "Deal 25% more damage to enemies with more than 1600 maximum Health."
-        return effect_description
-
 def get_giant_slayer_effects():
      
     effects = []

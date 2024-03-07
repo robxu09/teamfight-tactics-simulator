@@ -3,8 +3,8 @@ import sys, csv
 
 from champions.champion import Champion
 
-from champions.champion_effects.Annie_effect import get_Annie_effects, get_Annie_description
-from champions.champion_effects.Vi_effect import get_Vi_effects, get_Vi_description
+from champions.champion_effects.Annie_effect import get_Annie_effects
+from champions.champion_effects.Vi_effect import get_Vi_effects
 
 # Function to create Champion objects with predefined data
 def create_champions(set, patch):

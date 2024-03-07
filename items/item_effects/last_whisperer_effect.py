@@ -1,11 +1,6 @@
 # items.item_effects.last_whisperer_effect
 from simulation_system.simulation_steps import Simulation_Step
 
-def get_last_whisperer_description():
-        effect_description = """Physical damage 30% Sunders the target for 3 seconds. This effect does not stack."""""
-                
-        return effect_description
-
 def get_last_whisperer_effects():
      
     effects = []

@@ -7,10 +7,11 @@ from simulation_system.simulation_steps import Simulation_Step
 
 class Champion:
     def __init__(self, name, star_level=1, health=0, attack_damage=0, ability_power=0, armor=0,
-                 magic_resist=0, starting_mana=0, mana_to_cast=0, attack_speed=0, attack_range=0, description=""):
+                 magic_resist=0, starting_mana=0, mana_to_cast=0, attack_speed=0, attack_range=0, traits = [], description=""):
         
         self.name = name
         self.star_level = star_level
+        self.traits = traits
 
         # EFFECTS
 
@@ -349,9 +350,6 @@ class Champion:
     # SETTERS
 
     # SET EFFECTS
-    def set_description(self, description):
-
-        self.description = description
 
     # set effect ability for each champion (not ultimate ability)
     def set_effects(self, custom_effects):

@@ -21,7 +21,7 @@ def main():
     champion2 = Vi
 
     # Create items
-    all_items = create_items()
+    all_items = create_items(10, 'test')
 
     # components
     chain_vest = all_items.get("Chain Vest")

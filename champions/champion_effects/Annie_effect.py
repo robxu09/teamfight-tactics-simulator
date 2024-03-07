@@ -1,13 +1,6 @@
 # champions.champion_effects.Annie_effect
 from simulation_system.simulation_steps import Simulation_Step
 
-def get_Annie_description():
-        description = """Passive: After 4 casts, gain 40% Attack Speed and casts deal 80/120/180 () magic damage to another nearby enemy.
-
-Active: Deal 220/330/495 () magic damage to the current target."""
-        
-        return description
-
 # create effect specifically to trigger end of ultimate cast.
 # create multiple effects and put in list
 # create get_Annie_effects():
