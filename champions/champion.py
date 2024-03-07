@@ -6,12 +6,8 @@ from constants import SIMULATION_TICK_SPEED, SIMULATION_TICK_SPEED_DECIMALS
 from simulation_system.simulation_steps import Simulation_Step
 
 class Champion:
-    def __init__(self, name, star_level=None, ultimate_description=None, cast_ultimate=None,
-                 health=0, attack_damage=0, ability_power=0, armor=0,
-                 magic_resist=0, starting_mana=0, mana_to_cast=0,
-                 attack_speed=0, critical_strike_chance=0.25, critical_strike_damage=1.4,
-                 attack_range=0, omnivamp=0, shield=0, mana_gained_on_hit=1,
-                 mana_gained_on_attack=10, can_crit_ult_default=False, description=""):
+    def __init__(self, name, star_level=1, health=0, attack_damage=0, ability_power=0, armor=0,
+                 magic_resist=0, starting_mana=0, mana_to_cast=0, attack_speed=0, attack_range=0, description=""):
         
         self.name = name
         self.star_level = star_level
@@ -36,7 +32,7 @@ class Champion:
         self.original_attack_damage = attack_damage
         self.original_attack_speed = attack_speed
         self.original_total_health = health
-        self.can_crit_ult_default = can_crit_ult_default
+        self.can_crit_ult_default = False
 
         # basic combat stats
         self.total_health = health
@@ -47,8 +43,8 @@ class Champion:
         self.starting_mana = starting_mana
         self.mana_to_cast = mana_to_cast
         self.attack_speed = attack_speed
-        self.critical_strike_chance = critical_strike_chance
-        self.critical_strike_damage = critical_strike_damage
+        self.critical_strike_chance = 0.25
+        self.critical_strike_damage = 1.4
         self.attack_range = attack_range
 
         # debuff stats
@@ -58,10 +54,10 @@ class Champion:
         self.sunder_amount = 0
 
         # extra combat stats 
-        self.omnivamp = omnivamp
-        self.shield = shield
-        self.mana_gained_on_hit = mana_gained_on_hit
-        self.mana_gained_on_attack = mana_gained_on_attack
+        self.omnivamp = 0
+        self.shield = 0
+        self.mana_gained_on_hit = 1
+        self.mana_gained_on_attack = 10
         self.health = self.total_health
         self.armor_after_sunder = self.armor * (1 - self.sunder_amount)
         self.magic_resist_after_shred = self.magic_resist * (1 - self.shred_amount)
@@ -353,6 +349,9 @@ class Champion:
     # SETTERS
 
     # SET EFFECTS
+    def set_description(self, description):
+
+        self.description = description
 
     # set effect ability for each champion (not ultimate ability)
     def set_effects(self, custom_effects):

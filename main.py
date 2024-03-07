@@ -10,7 +10,7 @@ from scenarios.one_vs_one import OneVsOne
 def main():
 
     # Get a dictionary of Champion objects
-    all_champions = create_champions()
+    all_champions = create_champions(10, 'test')
 
     Tahm_Kench = all_champions.get("Tahm Kench")
     Vi = all_champions.get("Vi")

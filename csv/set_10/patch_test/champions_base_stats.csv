@@ -1,0 +1,10 @@
+Name,Star Level,Health,Attack Damage,Ability Power,Armor,Magic Resist,Attack Speed,Attack Range,Starting Mana,Mana to Cast
+Annie,1,450,40,100,20,20,0.65,5,0,50
+Annie,2,810,72,100,20,20,0.65,5,0,50
+Annie,3,1620,144,100,20,20,0.65,5,0,50
+Tahm Kench,1,650,88,100,40,40,0.55,1,0,0
+Tahm Kench,2,1170,158,100,40,40,0.55,1,0,0
+Tahm Kench,3,2340,317,100,40,40,0.55,1,0,0
+Vi,1,650,55,100,45,45,0.6,1,40,70
+Vi,2,1170,99,100,45,45,0.6,1,40,70
+Vi,3,2340,198,100,45,45,0.6,1,40,70
