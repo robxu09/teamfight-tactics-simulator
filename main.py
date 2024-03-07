@@ -9,12 +9,13 @@ from scenarios.one_vs_one import OneVsOne
 
 def main():
 
+    print(f"Start Main")
     # Get a dictionary of Champion objects
     all_champions = create_champions(10, 'test')
 
-    Tahm_Kench = all_champions.get("Tahm Kench")
-    Vi = all_champions.get("Vi")
-    Annie = all_champions.get("Annie")
+    Tahm_Kench = all_champions.get("Tahm Kench_1")
+    Vi = all_champions.get("Vi_1")
+    Annie = all_champions.get("Annie_1")
 
     champion1 = Annie
     champion2 = Vi
