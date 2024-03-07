@@ -35,7 +35,7 @@ def create_items():
         "Infinity Edge": Item(name="Infinity Edge", bonus_attack_damage=0.35, bonus_critical_strike_chance=0.35, 
                             effect_description=get_infinity_edge_effect_description),
         "Warmog's Armor": Item(name="Warmog's Armor", bonus_health=800),
-        "Jeweled Gauntlet": Item(name="Jeweled Gauntlet", bonus_ability_power=0.35, bonus_critical_strike_chance=0.35, 
+        "Jeweled Gauntlet": Item(name="Jeweled Gauntlet", bonus_ability_power=35, bonus_critical_strike_chance=0.35, 
                             effect_description=get_jeweled_gauntlet_effect_description),
         "Last Whisperer": Item(name="Last Whisperer", bonus_attack_speed=0.15, bonus_attack_damage=0.25, bonus_critical_strike_chance=0.2,
                             effect_description=get_last_whisperer_description),

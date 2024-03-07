@@ -16,7 +16,7 @@ def get_giant_slayer_effects():
 def get_giant_slayer_effect():
 
     # data is used to pass in inputs for effects
-    def effect(simulation_step, champion, enemy_champion, current_simulation_time, damage, amount_of_times_triggered=0):
+    def effect(simulation_step, champion, enemy_champion, item, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
     
         if(simulation_step == Simulation_Step.OnDealDamage):
 

@@ -33,20 +33,20 @@ def get_Annie_ultimate():
 
             # 220/330/495
 
-            dmg_to_do = 0
-            bonus_dmg_to_do = 0
+            dmg_to_do = champion.ability_power * 0.01
+            bonus_dmg_to_do = champion.ability_power * 0.01
 
             amount_of_times_before_bonus = 4
 
             if(champion.star_level == 3):
-                dmg_to_do = 495
-                bonus_dmg_to_do = 180
+                dmg_to_do *= 495
+                bonus_dmg_to_do *= 180
             elif(champion.star_level == 2):
-                dmg_to_do = 330
-                bonus_dmg_to_do = 120
+                dmg_to_do *= 330
+                bonus_dmg_to_do *= 120
             else:
-                dmg_to_do = 220
-                bonus_dmg_to_do = 80
+                dmg_to_do *= 220
+                bonus_dmg_to_do *= 80
 
 
             print(f"{champion.can_crit_ult} can crit ult")

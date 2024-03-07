@@ -22,30 +22,36 @@ def main():
     # Create items
     all_items = create_items()
 
-    Deathblade = all_items.get("Deathblade")
-    Bloodthirster = all_items.get("Bloodthirster")
-    Warmogs = all_items.get("Warmog's Armor")
-    ChainVest = all_items.get("Chain Vest")
-    Cloak = all_items.get("Negatron Cloak")
-    LastWhisperer = all_items.get("Last Whisperer")
+    # components
+    chain_vest = all_items.get("Chain Vest")
+    negatron_cloak = all_items.get("Negatron Cloak")
+
+    bloodthirster = all_items.get("Bloodthirster")
+    deathblade = all_items.get("Deathblade")
+    infinity_edge = all_items.get("Infinity Edge")
+    jeweled_gauntlet = all_items.get("Jeweled Gauntlet")
+    last_whisperer = all_items.get("Last Whisperer")
+    warmogs_armor = all_items.get("Warmog's Armor")
 
     # give items to champion 1
-    # champion1.add_items(Deathblade)
-    # champion1.add_items(Bloodthirster)
-    # champion1.add_items(LastWhisperer)
-    champion1.add_items(Warmogs)
-    champion1.add_items(Warmogs)
-    # champion1.add_items(Warmogs)
-    # champion1.add_items(Warmogs)
+    # champion1.add_items(deathblade)
+    # champion1.add_items(bloodthirster)
+    # champion1.add_items(last_whisperer)
+    # champion1.add_items(infinity_edge)
+    champion1.add_items(jeweled_gauntlet)
+    champion1.add_items(warmogs_armor)
+    champion1.add_items(warmogs_armor)
+    # champion1.add_items(warmogs)
+    # champion1.add_items(warmogs)
 
 
     # give items to champion 2
-    champion2.add_items(Warmogs)
-    champion2.add_items(Warmogs)
-    champion2.add_items(Cloak)
-    # champion2.add_items(Warmogs)
-    # champion2.add_items(Warmogs)
-    # champion2.add_items(ChainVest)
+    champion2.add_items(warmogs_armor)
+    champion2.add_items(warmogs_armor)
+    champion2.add_items(negatron_cloak)
+    # champion2.add_items(warmogs)
+    # champion2.add_items(warmogs)
+    # champion2.add_items(chain_vest)
 
     # Create and run the one versus one scenario
     one_vs_one_scenario = OneVsOne()
