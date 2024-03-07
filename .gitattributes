@@ -1,15 +1,2 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-
-# Virtual environments
-venv/
-
-# Compiled Python files
-__pycache__/
-*.pyc
-*.pyo
-
-# Editor-specific files
-.vscode/
-*.sublime-project
-*.sublime-workspace
