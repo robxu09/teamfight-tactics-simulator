@@ -40,7 +40,7 @@ class ChampionStatTracker:
         # Time alive
         self.time_survived = 0
 
-    # Function placeholders
+    # Updaters
     def update_stats(self):
         # to implement if necessary
         pass

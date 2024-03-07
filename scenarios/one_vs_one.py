@@ -4,6 +4,7 @@ import numpy as np
 
 from simulation_system.simulation_steps import Simulation_Step
 from simulation_system.simulation_timer import SimulationTimer
+from simulation_system.simulation_results import SimulationResults
 
 class OneVsOne:
     def __init__(self):
@@ -48,7 +49,10 @@ class OneVsOne:
 
             # end of loop
 
-        self.print_stats(champion1, champion2)
+        # self.print_stats(champion1, champion2)
+        self.sim_results = SimulationResults([champion1, champion2], timer)
+        self.sim_results.populate_results()
+        self.sim_results.print_results()
 
     # start up helper method
         # creates timer, attaches timer to champions, and activates initial effects

@@ -102,7 +102,7 @@ class Champion:
         self.autoattack_damage_done = 0
         self.amount_damage_taken = 0
 
-        print(f"{self.name} has been created.")
+        # print(f"{self.name} has been created.")
 
     # CHAMPION MAIN ACTIONS to be performed in simulation loop
 
@@ -200,7 +200,7 @@ class Champion:
 
         amount *= (self.outgoing_damage_amp_percentage+1) * (target.incoming_damage_reduction_percentage+1)
 
-        print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
+        # print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
         self.stat_tracker.update_damage_done(amount, damage_type, True)
 
         target.take_damage(amount)
@@ -257,7 +257,7 @@ class Champion:
         self.health -= amount
         if self.health < 0:
             self.health = 0
-        print(f"{self.name} takes {round(amount,3)} damage!")
+        # print(f"{self.name} takes {round(amount,3)} damage!")
 
     def heal(self, amount):
         amount = amount * (1-self.wound_amount)

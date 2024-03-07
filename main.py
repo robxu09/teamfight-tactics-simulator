@@ -44,11 +44,13 @@ def main():
 
 
     # give items to champion 2
+    champion2.add_items(bloodthirster)
+    # champion2.add_items(infinity_edge)
     # champion2.add_items(warmogs_armor)
     champion2.add_items(warmogs_armor)
     champion2.add_items(negatron_cloak)
-    champion2.add_items(warmogs_armor)
-    champion2.add_items(warmogs_armor)
+    # champion2.add_items(warmogs_armor)
+    # champion2.add_items(warmogs_armor)
     # champion2.add_items(chain_vest)
 
     # Create and run the one versus one scenario

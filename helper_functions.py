@@ -1,4 +1,4 @@
-# math_1.py
+# helper_functions.py
 
 def count_decimal_places(number):
     # Convert the number to a string
@@ -15,3 +15,14 @@ def count_decimal_places(number):
     else:
         # If there is no decimal point, return 0
         return 0
+
+
+def print_formatted_dict(input_dict):
+    
+    for key, value in input_dict.items():
+
+        if isinstance(value, dict):
+            print(f"\n{key}: ")
+            print_formatted_dict(value)
+        else:
+            print(f"{key}: {value}")
