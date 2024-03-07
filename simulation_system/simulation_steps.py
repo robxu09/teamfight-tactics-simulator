@@ -15,3 +15,9 @@ class Simulation_Step(Enum):
     OnEndStatusUpdate = 11
     OnDealHealing = 12
     BeforeDealHealing = 13
+    OnHeal = 14
+    BeforeHeal = 15
+    OnDealShielding = 16
+    BeforeDealShielding = 17
+    OnGainShield = 18
+    BeforeGainShield = 19

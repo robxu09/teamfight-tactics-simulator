@@ -56,14 +56,12 @@ class Champion:
         self.incoming_damage_reduction_percentage = 0
 
         # debuff stats
-        self.burn_amount = 0
         self.wound_amount = 0
         self.shred_amount = 0
         self.sunder_amount = 0
 
         # extra combat stats 
         self.omnivamp = 0
-        self.shield = 0
         self.mana_gained_on_hit = 1
         self.mana_gained_on_attack = 10
         self.health = self.max_health
@@ -85,11 +83,13 @@ class Champion:
 
         self.can_cast_ultimate = False
         self.stun_time = 0
-        self.burn_time = 0
         self.attack_wait_timer = 0
         self.mana = self.starting_mana
         self.is_casting_ultimate = False
         self.is_mana_locked = False
+
+        self.burn_instances = []
+        self.shields = []
 
 
         # COMBAT ANALYSIS DATA
@@ -117,7 +117,7 @@ class Champion:
         self.magic_resist_after_shred = self.calculate_magic_resist_after_shred()
 
         # receive burn damage
-        if(self.burn_time > 0 and round(self.burn_time, SIMULATION_TICK_SPEED_DECIMALS) % 1 == 0):
+        if(len(self.burn_instances) > 0 and round(self.timer.current_time, SIMULATION_TICK_SPEED_DECIMALS) % 1 == 0):
             self.take_burn_damage()
         
         # activate relevant effects
@@ -135,15 +135,31 @@ class Champion:
             self.stun_time = 0
 
         # tick down burn time
-        if(self.burn_time > 0):
-            self.burn_time -= SIMULATION_TICK_SPEED
-        else:
-            self.burn_time = 0
+        for burn in self.burn_instances:
+            # print(f"{self.name} burn: {burn[0]}, {burn[1]}")
+            if(burn[1] > 0):
+                burn[1] -= SIMULATION_TICK_SPEED
+            else:
+                burn[1] = 0
+    
+        # remove old instances of burn
+        self.burn_instances = [x for x in self.burn_instances if x[1] > 0]        
+
+        # tick down shield times
+        for shield in self.shields:
+            # print(f"{self.name} shield: {shield[0]}, {shield[1]}")
+            if(shield[1] > 0):
+                shield[1] -= SIMULATION_TICK_SPEED
+            else:
+                shield[1] = 0
+
+            if (shield[0] <= 0):
+                shield[1] = 0
+        
+        # remove old shields
+        self.shields = [x for x in self.shields if x[1] > 0]
         
         self.activate_effects(Simulation_Step.OnEndStatusUpdate, enemy_champion, [])
-
-        # update stats
-        self.stat_tracker.update_stats()
 
     def autoattack_if_possible(self, target):
         # can't attack if conditions
@@ -162,7 +178,6 @@ class Champion:
     def execute_auto_attack(self, target):
         # activate any effects that happen On Autoattack
         self.activate_effects(Simulation_Step.BeforeAutoAttack, target, [])
-
 
         # base AD with average crit bonus against opponent armor
         AD_attack_amount = self.calculate_total_attack_damage_done(self.attack_damage, target, True)
@@ -242,22 +257,31 @@ class Champion:
         # print(f"{self.name} heals {target.name} for {round(amount,3)} health!")
     
     def take_burn_damage(self):
-        self.take_damage(self.burn_amount * self.max_health * (1+self.incoming_damage_reduction_percentage))
+        b = 0
+        for burn in self.burn_instances:
+            if burn[1] > 0:
+                b = max(b, burn[0])
+
+        self.take_damage(b * self.max_health * (1+self.incoming_damage_reduction_percentage))
 
     def take_damage(self, amount):
 
         self.stat_tracker.update_damage_taken(amount)
         # first, take damage to shield
-        self.shield = self.shield - amount
-        if(self.shield < 0):
-            amount = -1 * self.shield
-            self.shield = 0
-        else:
-            amount = 0
+
+        # for each shield in self.shields. remove from amount
+        for shield in self.shields:
+            
+            shield[0] = shield[0] - amount
+            if(shield[0] < 0):
+                amount = -1 * shield[0]
+                shield[0] = 0
+            else:
+                amount = 0 
+        
         self.health -= amount
         if self.health < 0:
             self.health = 0
-        # print(f"{self.name} takes {round(amount,3)} damage!")
 
     def heal(self, amount):
         amount = amount * (1-self.wound_amount)
@@ -267,15 +291,15 @@ class Champion:
     def apply_omnivamp(self, amount):
         self.deal_healing(self, amount*self.omnivamp)
 
-    def deal_shielding(self, target, amount):
+    def add_shield(self, amount, shield_up_time):
+        self.shields.append([amount, shield_up_time])
 
+    def deal_shielding(self, target, amount, shield_up_time):
         self.stat_tracker.update_shielding_done(amount, True)
-        target.shield += amount
+        target.add_shield(amount, shield_up_time)
 
     def become_burned(self, amount, time):
-        self.burn_amount = amount
-        self.burn_time = time
-        # print(f"get burned {self.burn_time}")
+        self.burn_instances.append([amount, time])
 
     def become_sundered(self, amount):
         self.sunder_amount = amount
@@ -435,12 +459,3 @@ class Champion:
             # turn on can cast ultimate trigger
             # print(f"{self.name} can cast ultimate. Current mana: {self.mana}. Mana to Cast: {self.mana_to_cast}")
             self.can_cast_ultimate = True
-
-
-    # INFORMATION LOGGERS
-    def print_champion_items(self):
-
-        print(f"{self.name}'s items:")
-        for item in self.items:
-            print(f"{item.name}")
-        print("\n")

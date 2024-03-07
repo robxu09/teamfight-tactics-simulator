@@ -40,11 +40,6 @@ class ChampionStatTracker:
         # Time alive
         self.time_survived = 0
 
-    # Updaters
-    def update_stats(self):
-        # to implement if necessary
-        pass
-
     def update_damage_done(self, amount, damage_type, to_real_target):
 
         self.total_damage_done += amount
