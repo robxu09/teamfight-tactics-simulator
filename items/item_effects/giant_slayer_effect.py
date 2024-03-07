@@ -22,7 +22,7 @@ def get_giant_slayer_effect():
             if(enemy_champion.total_health >= effect_trigger_health):
 
                 # print(f"{champion.name} deals 25% more damage more than {damage} because {enemy_champion.name} has {enemy_champion.total_health} total health (more than {effect_trigger_health}).")
-                champion.deal_bonus_damage(enemy_champion, damage*bonus_damage_percentage)
+                champion.deal_bonus_damage(enemy_champion, damage[0]*bonus_damage_percentage, damage[1])
 
                 return 1, current_simulation_time
             

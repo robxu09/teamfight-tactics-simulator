@@ -47,6 +47,7 @@ class Champion:
         self.critical_strike_chance = 0.25
         self.critical_strike_damage = 1.4
         self.attack_range = attack_range
+        
         self.outgoing_damage_amp_percentage = 0
         self.incoming_damage_reduction_percentage = 0
 
@@ -113,7 +114,7 @@ class Champion:
         self.magic_resist_after_shred = self.calculate_magic_resist_after_shred()
         
         # activate relevant effects
-        self.activate_effects(Simulation_Step.OnStartStatusUpdate, enemy_champion, 0)
+        self.activate_effects(Simulation_Step.OnStartStatusUpdate, enemy_champion, [])
 
         # apply burn damage
         if(self.burn_amount > 0 and (self.timer.current_time) % (1 / SIMULATION_TICK_SPEED) == 0):
@@ -146,7 +147,7 @@ class Champion:
         else:
             self.burn_time = 0
         
-        self.activate_effects(Simulation_Step.OnEndStatusUpdate, enemy_champion, 0)
+        self.activate_effects(Simulation_Step.OnEndStatusUpdate, enemy_champion, [])
 
     def autoattack_if_possible(self, target):
         # can't attack if conditions
@@ -164,21 +165,19 @@ class Champion:
 
     def execute_auto_attack(self, target):
         # activate any effects that happen On Autoattack
-        self.activate_effects(Simulation_Step.BeforeAutoAttack, target, 0)
+        self.activate_effects(Simulation_Step.BeforeAutoAttack, target, [])
 
 
         # base AD with average crit bonus against opponent armor
         AD_attack_amount = self.calculate_total_attack_damage_done(self.attack_damage, target, True)
 
-        self.deal_damage(target, AD_attack_amount)
-
-        self.autoattack_damage_done += AD_attack_amount
+        self.deal_damage(target, AD_attack_amount, "AD")
 
         # after autoattacking, give yourself mana
         self.gain_mana(self.mana_gained_on_attack)
 
         # activate any effects that happen On Autoattack
-        self.activate_effects(Simulation_Step.OnAutoAttack, target, AD_attack_amount)
+        self.activate_effects(Simulation_Step.OnAutoAttack, target, [AD_attack_amount, "AD"])
 
     def cast_ultimate_if_possible(self, target):
         
@@ -188,7 +187,7 @@ class Champion:
                 # Implement the logic for casting an ultimate
                 # print(f"{self.name} casts their ultimate against {target.name}!")
 
-                self.activate_effects(Simulation_Step.OnCastUltimate, target, 0)
+                self.activate_effects(Simulation_Step.OnCastUltimate, target, [])
 
 
                 self.can_cast_ultimate = False
@@ -197,9 +196,11 @@ class Champion:
 
     # BASIC CHAMPION ACTIONS  
 
-    def deal_damage(self, target, amount):
+    # damage_type = "AD", "AP", "TRUE"
 
-        self.activate_effects(Simulation_Step.BeforeDealDamage, target, amount)
+    def deal_damage(self, target, amount, damage_type):
+
+        self.activate_effects(Simulation_Step.BeforeDealDamage, target, [amount, damage_type])
 
         amount *= (self.outgoing_damage_amp_percentage+1) * (target.incoming_damage_reduction_percentage+1)
 
@@ -215,11 +216,14 @@ class Champion:
         # activate bonus effects after dealing damage. extra damage is added as bonus damage
         # fire extra bolt of damage, increase damage, etc.
         # on deal damage, extra input = damage amount
-        self.activate_effects(Simulation_Step.OnDealDamage, target, amount)
+        self.activate_effects(Simulation_Step.OnDealDamage, target, [amount, damage_type])
 
     # dealing bonus damage. (does not count as a hit. it's extra damage from a previous hit)
-    def deal_bonus_damage(self, target, amount):
+    
+    # damage_type = "AD", "AP", "TRUE"
 
+    def deal_bonus_damage(self, target, amount, damage_type):
+        self.activate_effects(Simulation_Step.BeforeDealBonusDamage, target, [amount, damage_type])
         amount *= (self.outgoing_damage_amp_percentage+1) * (target.incoming_damage_reduction_percentage+1)
 
         target.take_damage(amount)
@@ -229,7 +233,9 @@ class Champion:
         self.apply_omnivamp(amount)
 
     def deal_healing(self, target, amount):
+        self.activate_effects(Simulation_Step.BeforeDealHealing, target, [amount])
         target.heal(amount)
+        self.activate_effects(Simulation_Step.OnDealHealing, target, [amount])
         # print(f"{self.name} heals {target.name} for {round(amount,3)} health!")
     
     def take_burn_damage(self):
@@ -261,19 +267,15 @@ class Champion:
         self.burn_amount = amount
         self.burn_time = time
         # print(f"get burned {self.burn_time}")
-        pass
 
     def become_sundered(self, amount):
         self.sunder_amount = amount
-        pass
 
     def become_shredded(self, amount):
         self.shred_amount = amount
-        pass
 
     def become_wounded(self, amount):
         self.wound_amount = amount
-        pass
 
     def gain_mana(self, amount):
         if(self.is_mana_locked == False):
@@ -283,21 +285,24 @@ class Champion:
 
     # activates on all Simulation phase triggers
     # handles calling effects of champion, champion's items, champion's augments, champion's traits
-    def activate_effects(self, simulation_step, enemy_champion, damage):
+            
+    # data is a list []
+    # dealing damage simulation steps: [amount, damage_type]
+    # dealing other stats: [amount]
+    # other phases: []
+    def activate_effects(self, simulation_step, enemy_champion, data):
         # active personal effects
-        self.activate_personal_effects(simulation_step, self, enemy_champion, damage)
+        self.activate_personal_effects(simulation_step, self, enemy_champion, data)
 
         # activate item effects
         for item in self.items:
 
             item.give_base_stats(simulation_step, self)
-            item.activate_effect(simulation_step, self, enemy_champion, self.timer.current_time, damage)
+            item.activate_effect(simulation_step, self, enemy_champion, self.timer.current_time, data)
 
         # activate augment effects
 
         # active other effects
-
-        pass
         
     # ACTIVATE CHAMPION EFFECTS HELPER
 
@@ -421,9 +426,7 @@ class Champion:
             # turn on can cast ultimate trigger
             # print(f"{self.name} can cast ultimate. Current mana: {self.mana}. Mana to Cast: {self.mana_to_cast}")
             self.can_cast_ultimate = True
-        else:
-            # print(f"{self.name} set mana to {self.mana}.")
-            pass
+
 
     # INFORMATION LOGGERS
     def print_champion_items(self):

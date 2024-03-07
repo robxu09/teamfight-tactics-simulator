@@ -15,7 +15,7 @@ def main():
 
     Tahm_Kench = all_champions.get("Tahm Kench_1")
     Vi = all_champions.get("Vi_1")
-    Annie = all_champions.get("Annie_1")
+    Annie = all_champions.get("Annie_2")
 
     champion1 = Annie
     champion2 = Vi

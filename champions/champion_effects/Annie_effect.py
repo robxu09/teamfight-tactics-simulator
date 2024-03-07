@@ -28,6 +28,7 @@ def get_Annie_ultimate():
 
             dmg_to_do = champion.ability_power * 0.01
             bonus_dmg_to_do = champion.ability_power * 0.01
+            dmg_type = "AP"
 
             amount_of_times_before_bonus = 4
 
@@ -45,7 +46,7 @@ def get_Annie_ultimate():
             print(f"{champion.can_crit_ult} can crit ult")
             dmg_to_do = champion.calculate_total_magic_damage_done(dmg_to_do, enemy_champion, champion.can_crit_ult)
 
-            champion.deal_damage(enemy_champion, dmg_to_do)
+            champion.deal_damage(enemy_champion, dmg_to_do, dmg_type)
             # print(f"{champion.name} casted {amount_of_times_triggered} times before this")
 
             if (amount_of_times_triggered >= amount_of_times_before_bonus):
@@ -54,7 +55,7 @@ def get_Annie_ultimate():
                 # implement bonus damage
                 bonus_dmg_to_do = champion.calculate_total_magic_damage_done(bonus_dmg_to_do, enemy_champion, champion.can_crit_ult)
 
-                champion.deal_damage(enemy_champion, bonus_dmg_to_do)
+                champion.deal_damage(enemy_champion, bonus_dmg_to_do, dmg_type)
 
                 pass
 

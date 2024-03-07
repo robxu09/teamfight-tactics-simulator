@@ -20,6 +20,7 @@ def get_Vi_ultimate():
             #     Armor Reduction: 15% / 18% / 20%
             percentage_reduce_armor = 0
             stun_time = 0
+            dmg_type = "AD"
 
             if(champion.star_level == 3):
                 percentage_reduce_armor = 0.2
@@ -45,7 +46,7 @@ def get_Vi_ultimate():
 
             dmg_to_do = champion.calculate_total_attack_damage_done(dmg_to_do, enemy_champion, champion.can_crit_ult)
 
-            champion.deal_damage(enemy_champion, dmg_to_do)
+            champion.deal_damage(enemy_champion, dmg_to_do, dmg_type)
             print(f"{champion.name} casted")
 
             # cast time

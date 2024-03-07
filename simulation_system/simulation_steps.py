@@ -13,3 +13,5 @@ class Simulation_Step(Enum):
     BeforeCastUltimate = 9
     OnCastUltimate = 10
     OnEndStatusUpdate = 11
+    OnDealHealing = 12
+    BeforeDealHealing = 13

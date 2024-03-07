@@ -14,6 +14,7 @@ def create_champions(set, patch):
 
     # # # pass effect to champions
     all_champions.get("Annie_1").set_effects(get_Annie_effects)
+    all_champions.get("Annie_2").set_effects(get_Annie_effects)
     all_champions.get("Vi_1").set_effects(get_Vi_effects)
     
     return all_champions

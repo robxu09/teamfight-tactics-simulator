@@ -48,9 +48,6 @@ class OneVsOne:
 
             # end of loop
 
-        print(f"{champion1.name} dealt {round(champion1.autoattack_damage_done,3)} damage.")
-        print(f"{champion2.name} dealt {round(champion2.autoattack_damage_done,3)} damage.")
-
     # start up helper method
         # creates timer, attaches timer to champions, and activates initial effects
         # returns timer
