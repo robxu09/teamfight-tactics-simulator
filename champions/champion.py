@@ -47,6 +47,8 @@ class Champion:
         self.critical_strike_chance = 0.25
         self.critical_strike_damage = 1.4
         self.attack_range = attack_range
+        self.outgoing_damage_amp_percentage = 0
+        self.incoming_damage_reduction_percentage = 0
 
         # debuff stats
         self.burn_amount = 0
@@ -199,6 +201,8 @@ class Champion:
 
         self.activate_effects(Simulation_Step.BeforeDealDamage, target, amount)
 
+        amount *= (self.outgoing_damage_amp_percentage+1) * (target.incoming_damage_reduction_percentage+1)
+
         print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
         target.take_damage(amount)
 
@@ -215,6 +219,9 @@ class Champion:
 
     # dealing bonus damage. (does not count as a hit. it's extra damage from a previous hit)
     def deal_bonus_damage(self, target, amount):
+
+        amount *= (self.outgoing_damage_amp_percentage+1) * (target.incoming_damage_reduction_percentage+1)
+
         target.take_damage(amount)
         # print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
 
@@ -226,7 +233,7 @@ class Champion:
         # print(f"{self.name} heals {target.name} for {round(amount,3)} health!")
     
     def take_burn_damage(self):
-        self.take_damage(self.burn_amount * self.total_health)
+        self.take_damage(self.burn_amount * self.total_health * (1+self.incoming_damage_reduction_percentage))
 
     def take_damage(self, amount):
 
