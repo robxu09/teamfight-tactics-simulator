@@ -26,9 +26,10 @@ def get_bloodthirster_effect_activation():
             max_health_shield_percentage = 0.25
             number_of_times_effect_can_trigger = 1
 
-            if(amount_of_times_triggered < number_of_times_effect_can_trigger and champion.health <= champion.total_health * effect_trigger_percentage_health):
+            if(amount_of_times_triggered < number_of_times_effect_can_trigger and champion.health <= champion.max_health * effect_trigger_percentage_health):
                 # print(f"Start BT shield! {current_simulation_time}")
-                champion.shield += max_health_shield_percentage * champion.total_health
+                # champion.shield += max_health_shield_percentage * champion.max_health
+                champion.deal_shielding(champion, max_health_shield_percentage * champion.max_health)
 
                 return 1, current_simulation_time  
         
@@ -48,7 +49,7 @@ def get_bloodthirster_effect_end():
 
             if(amount_of_times_triggered < 1 and activation_time > 0 and current_simulation_time >= activation_time + effect_duration_time):
 
-                champion.shield -= max_health_shield_percentage * champion.total_health
+                champion.shield -= max_health_shield_percentage * champion.max_health
 
                 if(champion.shield < 0):
                     
@@ -68,10 +69,7 @@ def get_bloodthirster_effect_passive():
         if(simulation_step == Simulation_Step.OnInitiation):
 
             omnivamp_bonus = 0.2
-
-            champion.can_crit_ult = True
-            if(champion.can_crit_ult_default == True):
-                champion.omnivamp += omnivamp_bonus
+            champion.omnivamp += omnivamp_bonus
             return 1, current_simulation_time
 
         return 0, -1             

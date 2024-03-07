@@ -62,7 +62,7 @@ class Item:
             champion.set_magic_resist(champion.magic_resist + self.bonus_magic_resist)
             champion.set_armor(champion.armor + self.bonus_armor)
             champion.health += self.bonus_health
-            champion.total_health += self.bonus_health
+            champion.max_health += self.bonus_health
             champion.starting_mana += self.bonus_starting_mana
             champion.mana += self.bonus_starting_mana
             champion.set_attack_speed(champion.attack_speed + (self.bonus_attack_speed * champion.original_attack_speed))

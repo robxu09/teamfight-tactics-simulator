@@ -35,17 +35,18 @@ class Champion:
         # original stats to keep track of
         self.original_attack_damage = attack_damage
         self.original_attack_speed = attack_speed
-        self.original_total_health = health
+        self.original_max_health = health
         self.can_crit_ult_default = False
+        self.original_mana_cost = mana_to_cast
 
         # basic combat stats
-        self.total_health = health
+        self.max_health = health
         self.attack_damage = attack_damage
         self.ability_power = ability_power
         self.armor = armor
         self.magic_resist = magic_resist
         self.starting_mana = starting_mana
-        self.mana_to_cast = mana_to_cast
+        self.mana_to_cast = self.original_mana_cost
         self.attack_speed = attack_speed
         self.critical_strike_chance = 0.25
         self.critical_strike_damage = 1.4
@@ -65,7 +66,7 @@ class Champion:
         self.shield = 0
         self.mana_gained_on_hit = 1
         self.mana_gained_on_attack = 10
-        self.health = self.total_health
+        self.health = self.max_health
         self.armor_after_sunder = self.armor * (1 - self.sunder_amount)
         self.magic_resist_after_shred = self.magic_resist * (1 - self.shred_amount)
         self.can_crit_ult = self.can_crit_ult_default
@@ -106,43 +107,32 @@ class Champion:
     # CHAMPION MAIN ACTIONS to be performed in simulation loop
 
     # each champion must check and update status at start of every iteration of simulation
+    # handles setting of effects and stats
     def update_status_start(self, enemy_champion):
 
         # check if can cast ultimate
         self.can_cast_ultimate = True if self.mana >= self.mana_to_cast else False
 
-        # update current armor and mr after sunder and shred
         self.armor_after_sunder = self.calculate_armor_after_sunder()
-        # print(f"{self.name} armor_after_sunder: {self.armor_after_sunder}")
         self.magic_resist_after_shred = self.calculate_magic_resist_after_shred()
+
+        # receive burn damage
+        if(self.burn_time > 0 and round(self.burn_time, SIMULATION_TICK_SPEED_DECIMALS) % 1 == 0):
+            self.take_burn_damage()
         
         # activate relevant effects
         self.activate_effects(Simulation_Step.OnStartStatusUpdate, enemy_champion, [])
 
-        # apply burn damage
-        if(self.burn_amount > 0 and (self.timer.current_time) % (1 / SIMULATION_TICK_SPEED) == 0):
-            enemy_champion.deal_burn_damage(self)
-
     # each champion must check and update status at end of every iteration of simulation
     # handles wiping of effects
+    # also updates stat tracker
     def update_status_end(self, enemy_champion):
-
-        # check if can cast ultimate
-        self.can_cast_ultimate = True if self.mana >= self.mana_to_cast else False
-
-        # update current armor and mr after sunder and shred
-        self.armor_after_sunder = self.calculate_armor_after_sunder()
-        self.magic_resist_after_shred = self.calculate_magic_resist_after_shred()
 
         # tick down stun time
         if(self.stun_time > 0):
             self.stun_time -= SIMULATION_TICK_SPEED
         else:
             self.stun_time = 0
-
-        # receive burn damage
-        if(self.burn_time > 0 and round(self.burn_time, SIMULATION_TICK_SPEED_DECIMALS) % 1 == 0):
-            self.take_burn_damage()
 
         # tick down burn time
         if(self.burn_time > 0):
@@ -151,6 +141,9 @@ class Champion:
             self.burn_time = 0
         
         self.activate_effects(Simulation_Step.OnEndStatusUpdate, enemy_champion, [])
+
+        # update stats
+        self.stat_tracker.update_stats()
 
     def autoattack_if_possible(self, target):
         # can't attack if conditions
@@ -208,6 +201,8 @@ class Champion:
         amount *= (self.outgoing_damage_amp_percentage+1) * (target.incoming_damage_reduction_percentage+1)
 
         print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
+        self.stat_tracker.update_damage_done(amount, damage_type, True)
+
         target.take_damage(amount)
 
         # apply omnivamp
@@ -229,6 +224,8 @@ class Champion:
         self.activate_effects(Simulation_Step.BeforeDealBonusDamage, target, [amount, damage_type])
         amount *= (self.outgoing_damage_amp_percentage+1) * (target.incoming_damage_reduction_percentage+1)
 
+        self.stat_tracker.update_damage_done(amount, damage_type, True)
+
         target.take_damage(amount)
         # print(f"{self.name} deals {round(amount,3)} damage to {target.name}!")
 
@@ -237,15 +234,19 @@ class Champion:
 
     def deal_healing(self, target, amount):
         self.activate_effects(Simulation_Step.BeforeDealHealing, target, [amount])
+
+        self.stat_tracker.update_healing_done(amount, True)
+
         target.heal(amount)
         self.activate_effects(Simulation_Step.OnDealHealing, target, [amount])
         # print(f"{self.name} heals {target.name} for {round(amount,3)} health!")
     
     def take_burn_damage(self):
-        self.take_damage(self.burn_amount * self.total_health * (1+self.incoming_damage_reduction_percentage))
+        self.take_damage(self.burn_amount * self.max_health * (1+self.incoming_damage_reduction_percentage))
 
     def take_damage(self, amount):
 
+        self.stat_tracker.update_damage_taken(amount)
         # first, take damage to shield
         self.shield = self.shield - amount
         if(self.shield < 0):
@@ -264,7 +265,12 @@ class Champion:
         # print(f"{self.name} is healed for {round(amount,3)} health!")
 
     def apply_omnivamp(self, amount):
-        self.heal(amount*self.omnivamp)
+        self.deal_healing(self, amount*self.omnivamp)
+
+    def deal_shielding(self, target, amount):
+
+        self.stat_tracker.update_shielding_done(amount, True)
+        target.shield += amount
 
     def become_burned(self, amount, time):
         self.burn_amount = amount

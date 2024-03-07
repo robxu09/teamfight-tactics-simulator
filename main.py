@@ -9,7 +9,6 @@ from scenarios.one_vs_one import OneVsOne
 
 def main():
 
-    print(f"Start Main")
     # Get a dictionary of Champion objects
     all_champions = create_champions(10, 'test')
 
@@ -36,22 +35,20 @@ def main():
 
     # give items to champion 1
     # champion1.add_items(deathblade)
-    # champion1.add_items(bloodthirster)
+    champion1.add_items(bloodthirster)
     # champion1.add_items(last_whisperer)
     # champion1.add_items(infinity_edge)
     champion1.add_items(jeweled_gauntlet)
     champion1.add_items(warmogs_armor)
-    champion1.add_items(warmogs_armor)
-    # champion1.add_items(warmogs)
-    # champion1.add_items(warmogs)
+    # champion1.add_items(warmogs_armor)
 
 
     # give items to champion 2
-    champion2.add_items(warmogs_armor)
+    # champion2.add_items(warmogs_armor)
     champion2.add_items(warmogs_armor)
     champion2.add_items(negatron_cloak)
-    # champion2.add_items(warmogs)
-    # champion2.add_items(warmogs)
+    champion2.add_items(warmogs_armor)
+    champion2.add_items(warmogs_armor)
     # champion2.add_items(chain_vest)
 
     # Create and run the one versus one scenario

@@ -42,6 +42,7 @@ class ChampionStatTracker:
 
     # Function placeholders
     def update_stats(self):
+        # to implement if necessary
         pass
 
     def update_damage_done(self, amount, damage_type, to_real_target):
