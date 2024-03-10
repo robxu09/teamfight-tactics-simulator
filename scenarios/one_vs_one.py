@@ -1,6 +1,6 @@
 # entities/one_vs_one.py
 
-import numpy as np
+# import numpy as np
 
 from simulation_system.simulation_steps import Simulation_Step
 from simulation_system.simulation_timer import SimulationTimer

@@ -1,4 +1,5 @@
 Name,Star Level,Description,Health,Attack Damage,Ability Power,Armor,Magic Resist,Attack Speed,Attack Range,Starting Mana,Mana to Cast
+Target Dummy,1,,100,0,0,0,0,0.0,0,0,0
 Annie,1,,450,40,100,20,20,0.65,5,0,50
 Annie,2,,810,72,100,20,20,0.65,5,0,50
 Annie,3,,1620,144,100,20,20,0.65,5,0,50
