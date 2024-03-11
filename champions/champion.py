@@ -277,7 +277,7 @@ class Champion:
                 amount = -1 * shield[0]
                 shield[0] = 0
             else:
-                amount = 0 
+                amount = 0
         
         self.health -= amount
         if self.health < 0:
@@ -376,10 +376,10 @@ class Champion:
 
     # helper functions for calculating damage after resistances
     def calculate_physical_damage_after_armor(self, damage, enemy_champion):
-        return damage * (1 - (enemy_champion.armor/(enemy_champion.armor + 100)))
+        return damage * (1 - (enemy_champion.armor_after_sunder/(enemy_champion.armor_after_sunder + 100)))
     
     def calculate_magic_damage_after_magic_resist(self, damage, enemy_champion):
-        return damage * (1 - (enemy_champion.magic_resist/(enemy_champion.magic_resist + 100)))
+        return damage * (1 - (enemy_champion.magic_resist_after_shred/(enemy_champion.magic_resist_after_shred + 100)))
     
     # helper function for calculating bonus critical strike damage
     def calculate_bonus_critical_strike_damage(self, amount):

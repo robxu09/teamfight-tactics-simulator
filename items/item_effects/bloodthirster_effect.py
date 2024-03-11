@@ -29,7 +29,7 @@ def get_bloodthirster_effect_activation():
             if(amount_of_times_triggered < number_of_times_effect_can_trigger and champion.health <= champion.max_health * effect_trigger_percentage_health):
 
                 champion.deal_shielding(champion, max_health_shield_percentage * champion.max_health, shield_up_time)
-
+                # print(f'bt active: {max_health_shield_percentage * champion.max_health}')
 
                 return 1, current_simulation_time  
         

@@ -5,9 +5,17 @@ from champions.champion_data import create_champions
 from items.item_data import create_items
 from scenarios.one_vs_one import OneVsOne
 
+from scraper.scraper import get_html_content, extract_champion_data
+
 
 
 def main():
+
+    #test scraper
+    url = 'https://lolchess.gg/champions/set10/'
+    html_content = get_html_content(url)
+    if html_content:
+        champions_data = extract_champion_data(html_content)
 
     # Get a dictionary of Champion objects
     all_champions = create_champions(10, 'test')
