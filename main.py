@@ -5,13 +5,19 @@ from champions.champion_data import create_champions
 from items.item_data import create_items
 from scenarios.one_vs_one import OneVsOne
 
-from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data
+from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data, extract_item_json
 
 
 
 def main():
 
     #test scraper
+    url = 'https://lolchess.gg/items/set11'
+    html_content = get_html_content(url)
+    if html_content:
+        items_data = extract_item_json(html_content)
+
+    # champions scraper
     url = 'https://lolchess.gg/champions/set11/'
     html_content = get_html_content(url)
     if html_content:
@@ -44,6 +50,7 @@ def main():
 
     Tahm_Kench = all_champions.get("Tahm Kench_1")
     Vi = all_champions.get("Vi_1")
+    
     Annie = all_champions.get("Annie_2")
 
     champion1 = Annie
