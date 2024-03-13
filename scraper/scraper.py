@@ -42,12 +42,14 @@ def extract_champion_urls(html_content):
 
     return champions_data
 
-def extract_champion_data(html_content):
+def extract_champion_data(html_content, champion_name):
     soup = BeautifulSoup(html_content, 'html.parser')
 
     # Assuming the HTML structure contains information about champions
     # Adjust these selectors based on the actual structure of the webpage
     champion_data = {}
+
+    champion_data['name'] = champion_name
 
     #scrape for cost and traits
     champion_elements = soup.select('div.css-14ved7i.e1eohesh3')
@@ -139,31 +141,3 @@ def extract_champion_data(html_content):
         
 
     return champion_data
-
-def extract_item_json(html_content):
-
-    soup = BeautifulSoup(html_content, 'html.parser')
-
-    items_data = soup.find(id="__NEXT_DATA__").text.strip()
-    items_data = json.loads(items_data)
-
-    # path from json of __NEXT_DATA__ to get item data list
-
-    # dict_keys(['props', 'page', 'query', 'buildId', 'assetPrefix', 'isFallback', 'gssp', 'appGip', 'scriptLoader'])
-    # 'props' dict_keys(['initialProps', 'pageProps', '__N_SSP'])
-    # 'pageProps' dict_keys(['set', 'dehydratedState'])
-    # 'dehydratedState' dict_keys(['mutations', 'queries'])
-    # 'queries' list[0]
-    # 'queries'[0] dict_keys(['state', 'queryKey', 'queryHash'])
-    # 'state' dict_keys(['data', 'dataUpdateCount', 'dataUpdatedAt', 'error', 'errorUpdateCount', 'errorUpdatedAt', 'fetchFailureCount', 'fetchFailureReason', 'fetchMeta', 'isInvalidated', 'status', 'fetchStatus'])
-    # 'data' dict_keys(['season', 'items'])
-    # 'items' :: list of items
-
-    items_data = items_data['props']['pageProps']['dehydratedState']['queries'][0]['state']['data']['items']
-    print(len(items_data))
-
-    first_item = items_data[0]
-    print(first_item.keys())
-    print(first_item)
-
-    return 1
