@@ -141,3 +141,46 @@ def extract_champion_data(html_content, champion_name):
         
 
     return champion_data
+
+def extract_items_data(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
+    items_data = []
+
+    item_elements = soup.select('div.p-4.rounded.text-white1.bg-bg')
+
+    item_elements = [
+        element for element in item_elements if len(list(element.descendants)) > 1
+]
+
+    for item in item_elements:
+
+        item_data={}
+        # get item name
+        # print(tag_descendants[0])
+        name=''
+        first_string_descendant = next(item.strings, None)
+        if first_string_descendant:
+            name=first_string_descendant
+
+        print(name)
+
+        #get item stats
+        item_stats=''
+        stats = item.select('div.flex.flex-col.text-xs.text-white2')
+        for stat in stats:
+            item_stats = stat.get_text(separator=' ')
+            print(item_stats)
+
+        item_details=''
+        details = item.select('div.leading-tight.text-sm.leading-tight')
+        for det in details:
+            item_details = det.get_text(separator=' ')
+            print(item_details)
+
+        item_data['name']=name
+        item_data['stats']=stats
+        item_data['description']=details
+
+        items_data.append(item_data)
+
+    return items_data

@@ -5,13 +5,19 @@ from champions.champion_data import create_champions
 from items.item_data import create_items
 from scenarios.one_vs_one import OneVsOne
 
-from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data
+from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data, extract_items_data
 
 from helper_functions import print_formatted_dict
 
 
 def main():
-        
+
+    # items scraper 
+    url = 'https://tactics.tools/info/items'
+    html_content = get_html_content(url)
+    if html_content:
+        items_data = extract_items_data(html_content)
+        print_formatted_dict(items_data)
 
     # champions scraper
     url = 'https://lolchess.gg/champions/set11/'

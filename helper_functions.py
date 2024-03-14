@@ -18,11 +18,11 @@ def count_decimal_places(number):
 
 
 def print_formatted_dict(input_dict):
-    
-    for key, value in input_dict.items():
+    if isinstance(input_dict, dict):
+        for key, value in input_dict.items():
 
-        if isinstance(value, dict):
-            print(f"\n{key}: ")
-            print_formatted_dict(value)
-        else:
-            print(f"{key}: {value}")
+            if isinstance(value, dict):
+                print(f"\n{key}: ")
+                print_formatted_dict(value)
+            else:
+                print(f"{key}: {value}")
