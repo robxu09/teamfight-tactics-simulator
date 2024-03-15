@@ -146,11 +146,11 @@ def extract_items_data(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
     items_data = []
 
-    item_elements = soup.select('div.p-4.rounded.text-white1.bg-bg')
+    item_elements = soup.select('div.p-4.rounded.text-white1.bg-bg:not(:has(h2))')
 
     item_elements = [
         element for element in item_elements if len(list(element.descendants)) > 1
-]
+    ]
 
     for item in item_elements:
 
@@ -162,25 +162,100 @@ def extract_items_data(html_content):
         if first_string_descendant:
             name=first_string_descendant
 
-        print(name)
+        # print(name)
 
         #get item stats
         item_stats=''
         stats = item.select('div.flex.flex-col.text-xs.text-white2')
         for stat in stats:
             item_stats = stat.get_text(separator=' ')
-            print(item_stats)
+            # print(item_stats)
+
+        # print(item_stats)
 
         item_details=''
         details = item.select('div.leading-tight.text-sm.leading-tight')
         for det in details:
             item_details = det.get_text(separator=' ')
-            print(item_details)
+            # print(item_details)
 
         item_data['name']=name
-        item_data['stats']=stats
-        item_data['description']=details
+        item_data['stats']=item_stats
+
+        # print(item_details)
+        d = parse_item_stats(item_stats)
+
+        # break down stats
+        item_data['attack damage'] = d['ad_value']
+        item_data['ability power'] = d['ap_value']
+        item_data['armor'] = d['armor_value']
+        item_data['magic resist'] = d['mr_value']
+        item_data['health'] = d['health_value']
+        item_data['mana'] = d['mana_value']
+        item_data['attack speed'] = d['speed_value']
+        item_data['critical strike chance'] = d['crit_value']
+
+
+        item_data['description']=item_details
 
         items_data.append(item_data)
 
     return items_data
+
+def parse_item_stats(item_stats):
+
+    data = {}
+
+    # Define regex patterns to match the values
+    ad_pattern = r'\+(?P<ad>\d+)% Attack Damage'
+    ap_pattern = r'\+(?P<ap>\d+) Ability Power'
+    armor_pattern = r'\+(?P<armor>\d+) Armor'
+    mr_pattern = r'\+(?P<mr>\d+) Magic Resist'
+    health_pattern = r'\+(?P<health>\d+) Health'
+    mana_pattern = r'\+(?P<mana>\d+) Mana'
+    speed_pattern = r'\+(?P<speed>\d+)% Attack Speed'
+    crit_pattern = r'\+(?P<crit>\d+)% Critical Strike Chance'
+
+    # Initialize variables to store the extracted values
+    data['ad_value'] = 0
+    data['ap_value'] = 0
+    data['armor_value'] = 0
+    data['mr_value'] = 0
+    data['health_value'] = 0
+    data['mana_value'] = 0
+    data['speed_value'] = 0
+    data['crit_value'] = 0
+
+    ad_match = re.search(ad_pattern, item_stats)
+    if ad_match:
+        data['ad_value'] = int(ad_match.group('ad'))
+
+    ap_match = re.search(ap_pattern, item_stats)
+    if ap_match:
+        data['ap_value'] = int(ap_match.group('ap'))
+
+    armor_match = re.search(armor_pattern, item_stats)
+    if armor_match:
+        data['armor_value'] = int(armor_match.group('armor'))
+
+    mr_match = re.search(mr_pattern, item_stats)
+    if mr_match:
+        data['mr_value'] = int(mr_match.group('mr'))
+
+    health_match = re.search(health_pattern, item_stats)
+    if health_match:
+        data['health_value'] = int(health_match.group('health'))
+
+    mana_match = re.search(mana_pattern, item_stats)
+    if mana_match:
+        data['mana_value'] = int(mana_match.group('mana'))
+
+    speed_match = re.search(speed_pattern, item_stats)
+    if speed_match:
+        data['speed_value'] = int(speed_match.group('speed'))
+
+    crit_match = re.search(crit_pattern, item_stats)
+    if crit_match:
+        data['crit_value'] = int(crit_match.group('crit'))
+
+    return data

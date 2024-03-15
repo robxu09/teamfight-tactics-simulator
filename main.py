@@ -17,7 +17,9 @@ def main():
     html_content = get_html_content(url)
     if html_content:
         items_data = extract_items_data(html_content)
-        print_formatted_dict(items_data)
+        for item_data in items_data:
+            print_formatted_dict(item_data)
+            print()
 
     # champions scraper
     url = 'https://lolchess.gg/champions/set11/'
