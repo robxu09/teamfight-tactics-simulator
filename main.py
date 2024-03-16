@@ -5,7 +5,7 @@ from champions.champion_data import create_champions
 from items.item_data import create_items
 from scenarios.one_vs_one import OneVsOne
 
-from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data, extract_items_data
+from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data, extract_items_data, export_items_to_csv
 
 from helper_functions import print_formatted_dict
 
@@ -20,6 +20,7 @@ def main():
         for item_data in items_data:
             print_formatted_dict(item_data)
             print()
+        export_items_to_csv(items_data, "10")
 
     # champions scraper
     url = 'https://lolchess.gg/champions/set11/'

@@ -1,8 +1,7 @@
 # scraper_module/scraper.py
 import requests
-import re
-import sys
-import json
+import re, os, sys, json, csv
+
 from bs4 import BeautifulSoup
 
 # https://lolchess.gg/champions/set10/
@@ -180,7 +179,7 @@ def extract_items_data(html_content):
             # print(item_details)
 
         item_data['name']=name
-        item_data['stats']=item_stats
+        # item_data['stats']=item_stats
 
         # print(item_details)
         d = parse_item_stats(item_stats)
@@ -259,3 +258,34 @@ def parse_item_stats(item_stats):
         data['crit_value'] = int(crit_match.group('crit'))
 
     return data
+
+def export_items_to_csv(items_list, set):
+
+    if(len(items_list) > 0):
+        # Specify the keys for the CSV header
+        fieldnames = items_list[0].keys()
+
+        # Specify the path where you want to save the CSV file
+        csv_directory = "csv/set_" + "10"  # Relative path to the directory
+
+        # Create the directory if it doesn't exist
+        os.makedirs(csv_directory, exist_ok=True)
+
+        # Specify the file path and encoding
+        file_path = csv_directory +"/items.csv"
+        encoding = "utf-8"  # Use UTF-8 encoding
+
+        # Write data to the CSV file
+        with open(file_path, mode="w", newline="", encoding=encoding) as csv_file:
+
+            # Create a CSV writer object
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+            # Write the header
+            writer.writeheader()
+
+            # Write the data
+            for item in items_list:
+                writer.writerow(item)
+
+    return
