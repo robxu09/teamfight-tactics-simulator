@@ -266,7 +266,7 @@ def export_items_to_csv(items_list, set):
         fieldnames = items_list[0].keys()
 
         # Specify the path where you want to save the CSV file
-        csv_directory = "csv/set_" + "10"  # Relative path to the directory
+        csv_directory = "csv/set_" + set  # Relative path to the directory
 
         # Create the directory if it doesn't exist
         os.makedirs(csv_directory, exist_ok=True)
@@ -287,5 +287,36 @@ def export_items_to_csv(items_list, set):
             # Write the data
             for item in items_list:
                 writer.writerow(item)
+
+    return
+
+def export_champion_details_to_csv(champions_list, set, patch):
+
+    if(len(champions_list) > 0):
+        # Specify the keys for the CSV header
+        fieldnames = champions_list[0].keys()
+
+        # Specify the path where you want to save the CSV file
+        csv_directory = "csv/set_" + set + "/patch_" + patch # Relative path to the directory
+
+        # Create the directory if it doesn't exist
+        os.makedirs(csv_directory, exist_ok=True)
+
+        # Specify the file path and encoding
+        file_path = csv_directory +"/champions.csv"
+        encoding = "utf-8"  # Use UTF-8 encoding
+
+        # Write data to the CSV file
+        with open(file_path, mode="w", newline="", encoding=encoding) as csv_file:
+
+            # Create a CSV writer object
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+            # Write the header
+            writer.writeheader()
+
+            # Write the data
+            for champion in champions_list:
+                writer.writerow(champion)
 
     return
