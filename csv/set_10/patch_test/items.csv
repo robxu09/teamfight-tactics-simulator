@@ -1,123 +1,121 @@
 name,attack damage,ability power,armor,magic resist,health,mana,attack speed,critical strike chance,description
-Deathblade,55,0,0,0,0,0,0,0,Deal 8% bonus damage.
-Giant Slayer,30,20,0,0,0,0,10,0,Deal 25% more damage to enemies with more than 1600 maximum Health.
-Hextech Gunblade,15,15,0,0,0,0,0,0,"Gain 22%  Omnivamp , which also heals the lowest percent Health ally. Omnivamp : heal for some of damage dealt"
-Spear of Shojin,20,20,0,0,0,15,0,0,Attacks grant 5 bonus Mana.
-Edge of Night,10,0,20,0,0,0,0,0,"Once per combat: At 60% Health, briefly become untargetable and shed negative effects. Then, gain 15% bonus Attack Speed. [Unique - only 1 per champion]"
-Bloodthirster,20,15,0,20,0,0,0,0,"Gain 20%  Omnivamp . Once per combat at 40% Health, gain a 25% max Health Shield that lasts up to 5 seconds. Omnivamp : heal for some of damage dealt"
-Sterak's Gage,15,0,0,0,200,0,0,0,"Once per combat at 60% Health, gain 20% max Health and 35% Attack Damage."
+Rabadon's Deathcap,0,50,0,0,0,0,0,0,Deal 20% bonus damage.
 Infinity Edge,35,0,0,0,0,0,0,35,"Abilities can critically strike. If the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
-Red Buff,0,0,0,0,0,0,40,0,Deal 6% bonus damage. Attacks and Abilities 1%  Burn  and 33%  Wound  enemies for 5 seconds. Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received
+Protector's Vow,0,0,20,0,0,30,0,0,"Once per combat at 40% Health, gain a 25% max Health Shield that lasts 5 seconds and gain 20 Armor and 20 Magic Resist."
+Redemption,0,0,0,0,150,15,0,0,Heal allies within 1 hex for 15% of their missing Health every 5 seconds. They also take 10% less damage for 5 seconds (damage reduction does not stack).
+Thief's Gloves,0,0,0,0,150,0,0,20,Each round: Equip 2 random items. [Consumes 3 item slots.]
 Guinsoo's Rageblade,0,10,0,0,0,0,15,0,Attacks grant 5% stacking Attack Speed.
-Statikk Shiv,0,15,0,0,0,15,20,0,Every 3rd attack deals 35 magic damage and 30%  Shreds  4 enemies for 5 seconds. Shred : Reduce Magic Resist
+Ionic Spark,0,15,0,25,200,0,0,0,"30%  Shred  enemies within 2 hexes. When enemies cast an Ability, deal magic damage equal to 160% of their maximum Mana. Shred : Reduce Magic Resist"
+Sterak's Gage,15,0,0,0,200,0,0,0,"Once per combat at 60% Health, gain 20% max Health and 35% Attack Damage."
+Dragon's Claw,0,0,0,65,0,0,0,0,"Gain 9% max health. Every 2 seconds, heal 5% max Health."
+Guardbreaker,0,10,0,0,150,0,20,20,"After damaging a Shield, deal 25% more damage for 3 seconds."
+Gargoyle Stoneplate,0,0,35,35,100,0,0,0,Gain 10 Armor and 10 Magic Resist for each enemy targeting the holder.
+Bramble Vest,0,0,55,0,0,0,0,0,"Gain 5% max health. Take 8% reduced damage from attacks. When struck by any attack, deal  100 magic damage  to all adjacent enemies. Cooldown: 2 seconds"
+Giant Slayer,30,20,0,0,0,0,10,0,Deal 25% more damage to enemies with more than 1600 maximum Health.
+Sunfire Cape,0,0,20,0,250,0,0,0,"Every 2 seconds, deal 1%  Burn  and 33%  Wound  to an enemy within 2 hexes for 10 seconds. [Unique - only 1 per champion] Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received"
+Hand Of Justice,0,0,0,0,0,15,0,20,"Gain 2 effects: 15% Attack Damage and 15 Ability Power. 15%  Omnivamp . Each round, randomly double 1 of these effects. Omnivamp : heal for some of damage dealt"
+Edge of Night,10,0,20,0,0,0,0,0,"Once per combat: At 60% Health, briefly become untargetable and shed negative effects. Then, gain 15% bonus Attack Speed. [Unique - only 1 per champion]"
 Titan's Resolve,0,0,20,0,0,0,10,0,"Gain 2% Attack Damage and 2 Ability Power when attacking or taking damage, stacking up to 25 times.   At full stacks, gain 20 Armor and 20 Magic Resist."
 Runaan's Hurricane,25,0,0,20,0,0,10,0,"Attacks fire a bolt at a nearby enemy, dealing 55% Attack Damage   as physical damage."
-Nashor's Tooth,0,30,0,0,150,0,10,0,"After casting an Ability, gain 40% Attack Speed for 5 seconds."
-Last Whisper,15,0,0,0,0,0,25,20,Physical damage 30%  Sunders  the target for 3 seconds. This effect does not stack. [Unique - only 1 per champion] Sunder : Reduce Armor
-Rabadon's Deathcap,0,50,0,0,0,0,0,0,Deal 20% bonus damage.
+Bloodthirster,20,15,0,20,0,0,0,0,"Gain 20%  Omnivamp . Once per combat at 40% Health, gain a 25% max Health Shield that lasts up to 5 seconds. Omnivamp : heal for some of damage dealt"
 Archangel's Staff,0,20,0,0,0,15,0,0,Combat start: Gain 30 Ability Power every 5 seconds in combat.
-Crownguard,0,20,20,0,100,0,0,0,"Combat start: Gain a 30% max Health Shield for 8 seconds. When the shield expires, gain 35 Ability Power."
-Ionic Spark,0,15,0,25,200,0,0,0,"30%  Shred  enemies within 2 hexes. When enemies cast an Ability, deal magic damage equal to 160% of their maximum Mana. Shred : Reduce Magic Resist"
-Morellonomicon,0,25,0,0,150,0,15,0,Attacks and Abilities deal 1%  Burn  and 33%  Wound  to enemies for 10 seconds. [Unique - only 1 per champion] Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received
-Jeweled Gauntlet,0,35,0,0,0,0,0,35,"Abilities can critically strike. If the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
-Blue Buff,20,20,0,0,0,20,0,0,"Max mana reduced by 10.  When the holder gets a takedown, they deal 8% more damage for 8 seconds. [Unique - only 1 per champion]"
-Protector's Vow,0,0,20,0,0,30,0,0,"Once per combat at 40% Health, gain a 25% max Health Shield that lasts 5 seconds and gain 20 Armor and 20 Magic Resist."
-Adaptive Helm,0,15,0,20,0,15,0,0,Combat start: Gain different bonuses based on starting position. Front Two Rows: 40 Armor and Magic Resist. Gain 1 Mana when struck by an attack. Back Two Rows: 20 Ability Power. Gain 10 Mana every 3 seconds.
-Redemption,0,0,0,0,150,15,0,0,Heal allies within 1 hex for 15% of their missing Health every 5 seconds. They also take 10% less damage for 5 seconds (damage reduction does not stack).
-Hand Of Justice,0,0,0,0,0,15,0,20,"Gain 2 effects: 15% Attack Damage and 15 Ability Power. 15%  Omnivamp . Each round, randomly double 1 of these effects. Omnivamp : heal for some of damage dealt"
-Bramble Vest,0,0,55,0,0,0,0,0,"Gain 5% max health. Take 8% reduced damage from attacks. When struck by any attack, deal  100 magic damage  to all adjacent enemies. Cooldown: 2 seconds"
-Gargoyle Stoneplate,0,0,35,35,100,0,0,0,Gain 10 Armor and 10 Magic Resist for each enemy targeting the holder.
-Sunfire Cape,0,0,20,0,250,0,0,0,"Every 2 seconds, deal 1%  Burn  and 33%  Wound  to an enemy within 2 hexes for 10 seconds. [Unique - only 1 per champion] Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received"
-Steadfast Heart,0,0,20,0,250,0,0,20,"Take 8% less damage. While above 50% Health, take 15% less damage, instead."
-Dragon's Claw,0,0,0,55,0,0,0,0,"Gain 9% max health. Every 2 seconds, heal 5% max Health."
+Spear of Shojin,20,20,0,0,0,15,0,0,Attacks grant 5 bonus Mana.
 Evenshroud,0,0,0,20,150,0,0,0,30%  Sunder  enemies within 2 hexes. Gain 25 Armor and Magic Resist for the first 10 seconds of combat. Sunder : Reduce Armor
+Nashor's Tooth,0,30,0,0,150,0,10,0,"After casting an Ability, gain 40% Attack Speed for 5 seconds."
+Morellonomicon,0,25,0,0,150,0,15,0,Attacks and Abilities deal 1%  Burn  and 33%  Wound  to enemies for 10 seconds. [Unique - only 1 per champion] Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received
+Red Buff,0,0,0,0,0,0,40,0,Deal 6% bonus damage. Attacks and Abilities 1%  Burn  and 33%  Wound  enemies for 5 seconds. Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received
+Crownguard,0,20,20,0,100,0,0,0,"Combat start: Gain a 30% max Health Shield for 8 seconds. When the shield expires, gain 35 Ability Power."
+Adaptive Helm,0,15,0,20,0,15,0,0,Combat start: Gain different bonuses based on starting position. Front Two Rows: 40 Armor and Magic Resist. Gain 1 Mana when struck by an attack. Back Two Rows: 20 Ability Power. Gain 10 Mana every 3 seconds.
+Blue Buff,20,20,0,0,0,20,0,0,"Max mana reduced by 10.  When the holder gets a takedown, they deal 8% more damage for 8 seconds. [Unique - only 1 per champion]"
+Last Whisper,15,0,0,0,0,0,25,20,Physical damage 30%  Sunders  the target for 3 seconds. This effect does not stack. [Unique - only 1 per champion] Sunder : Reduce Armor
+Jeweled Gauntlet,0,35,0,0,0,0,0,35,"Abilities can critically strike. If the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
+Steadfast Heart,0,0,20,0,250,0,0,20,"Take 8% less damage. While above 50% Health, take 15% less damage, instead."
 Quicksilver,0,0,0,20,0,0,30,20,"Combat start: Gain immunity to crowd control for 14 seconds. During this time, gain 4% Attack Speed every 2 seconds. [Unique - only 1 per champion]"
+Deathblade,55,0,0,0,0,0,0,0,Deal 8% bonus damage.
 Warmog's Armor,0,0,0,0,600,0,0,0,Gain 8% max health.
-Guardbreaker,0,10,0,0,150,0,20,20,"After damaging a Shield, deal 25% more damage for 3 seconds."
-Thief's Gloves,0,0,0,0,150,0,0,20,Each round: Equip 2 random items. [Consumes 3 item slots.]
-True Damage Emblem,10,0,0,0,0,0,0,0,The holder joins the True Damage band. [Unique - only 1 per champion]
-8-bit Emblem,0,0,0,0,0,0,10,0,The holder joins the 8-bit band. [Unique - only 1 per champion]
-K/DA Emblem,0,10,0,0,0,0,0,0,The holder joins the K/DA band. [Unique - only 1 per champion]
-Emo Emblem,0,0,0,0,0,15,0,0,The holder joins the Emo band. [Unique - only 1 per champion]
-Pentakill Emblem,0,0,20,0,0,0,0,0,The holder joins the Pentakill band. [Unique - only 1 per champion]
-Heartsteel Emblem,0,0,0,0,150,0,0,0,The holder joins the Heartsteel band. [Unique - only 1 per champion]
-Punk Emblem,0,0,0,0,0,0,0,20,The holder joins the Punk band. [Unique - only 1 per champion]
-Country Emblem,0,0,0,20,0,0,0,0,The holder joins the Country band. [Unique - only 1 per champion]
-Jazz Emblem,0,0,0,0,150,0,0,0,The holder joins the Jazz band. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Sentinel Emblem,0,0,0,0,150,0,0,0,The holder gains the Sentinel trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Superfan Emblem,0,0,0,0,150,0,0,0,The holder gains the Superfan trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Spellweaver Emblem,0,0,0,0,150,0,0,0,The holder gains the Spellweaver trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Rapidfire Emblem,0,0,0,0,150,0,0,0,The holder gains the Rapidfire trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Mosher Emblem,0,0,0,0,150,0,0,0,The holder gains the Mosher trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Guardian Emblem,0,0,0,0,150,0,0,0,The holder gains the Guardian trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Hyperpop Emblem,0,0,0,0,150,0,0,0,The holder joins the Hyperpop band. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Executioner Emblem,0,0,0,0,150,0,0,0,The holder gains the Executioner trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Edgelord Emblem,0,0,0,0,150,0,0,0,The holder gains the Edgelord trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Disco Emblem,0,0,0,0,150,0,0,0,The holder joins the Disco band. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Dazzler Emblem,0,0,0,0,150,0,0,0,The holder gains the Dazzler trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Crowd Diver Emblem,0,0,0,0,150,0,0,0,The holder gains the Crowd Diver trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Bruiser Emblem,0,0,0,0,150,0,0,0,The holder gains the Bruiser trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Big Shot Emblem,0,0,0,0,150,0,0,0,The holder gains the Big Shot trait. [Unique - only 1 per champion Elusive - cannot be crafted.]
-Luminous Deathblade,105,0,0,0,0,0,0,0,Deal  12%  bonus damage.
-Demonslayer,50,40,0,0,0,0,10,0,Deal  60%  more damage to enemies with more than 1600 maximum Health.
-Hextech Lifeblade,30,50,0,0,0,0,0,0,Gain  35%  Omnivamp. Damage dealt heals the lowest percent Health ally for the same amount.
-Spear of Hirana,45,45,0,0,0,15,0,0,Attacks grant  10 bonus Mana .
-Brink of Dawn,30,0,30,0,0,0,0,0,"Once per combat: At 60% Health, briefly become untargetable and shed negative effects. Then,  heal 100% missing health and gain 85% bonus Attack Speed .  [Unique - only 1 per champion]"
-Blessed Bloodthirster,40,30,0,20,0,0,0,0,"Gain  40%   Omnivamp . Once per combat: At 40% Health, gain a  40%  max Health Shield that lasts up to 5 seconds. Omnivamp : heal for some of damage dealt"
-Sterak's Megashield,30,0,0,0,400,0,0,0,"Once per combat at 60% Health, gain  30% max Health  and  55% Attack Damage ."
-Zenith Edge,65,0,0,0,0,0,0,75,"Abilities can critically strike. If the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
-Crest of Cinders,0,0,0,0,0,0,60,0,Deal  8%  bonus damage. Attacks and Abilities  3%   Burn  and  33%   Wound  enemies for 5 seconds. Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received
-Guinsoo's Reckoning,0,10,0,0,0,0,20,0,Attacks grant  10%  stacking Attack Speed.
-Statikk's Favor,0,50,0,0,0,15,20,0,Every 3rd attack deals  80  magic damage and  30%  Shreds   8  enemies for 5 seconds. Shred : Reduce Magic Resist
-Titan's Vow,0,0,35,0,0,0,30,0,"Gain  3%  Attack Damage and  3  Ability Power when attacking or taking damage, stacking up to 25 times. At full stacks, gain  50  Armor and  50  Magic Resist."
-Runaan's Tempest,35,0,0,20,0,0,20,0,"Attacks fire a bolt at a nearby enemy, dealing  110%  Attack Damage   as physical damage."
-The Baron's Gift,0,55,0,0,200,0,20,0,"After casting an Ability, gain  80% Attack Speed  for  8 seconds ."
-Eternal Whisper,45,0,0,0,0,0,25,55,Physical damage 30%  Sunders  the target for  the rest of combat.  This effect does not stack. [Unique - only 1 per champion] Sunder : Reduce Armor
-Rabadon's Ascended Deathcap,0,70,0,0,0,0,0,0,Deal  50%  bonus damage.
-Urf-Angel's Staff,0,50,0,0,0,15,0,0,Combat start: Gain  40  Ability Power every  4  seconds in combat.
-Royal Crownshield,0,50,40,0,250,0,0,0,"Combat start: Gain a  50%  max Health Shield for 8 seconds.  When the shield expires, gain  50 Ability Power ."
-Covalent Spark,0,15,0,50,400,0,0,0,"30%  Shred  enemies within  3  hexes. When enemies cast an Ability, deal magic damage equal to  250%  of their maximum Mana. Also, regenerate 1.5% maximum Health per second. [Direct damage item] Shred : Reduce Magic Resist"
-More More-ellonomicon,0,50,0,0,150,0,25,0,Attacks and Abilities deal  3%   Burn  and 33%  Wound  to enemies for  30  seconds. [Unique - only 1 per champion] Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received
-Glamorous Gauntlet,0,65,0,0,0,0,0,75,"Abilities can critically strike. If the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
-Blue Blessing,60,60,0,0,0,20,0,0,"Max mana reduced by 10.  When the holder gets a takedown, they deal  20%  more damage for  12  seconds. [Unique - only 1 per champion]"
-Bulwark's Oath,0,0,40,0,0,30,0,0,"Once per combat at 40% Health, gain a  50%  max Health Shield that lasts  10  seconds and gain  60  Armor and  60  Magic Resist."
-Jak'sho the Protean,0,15,0,30,0,15,0,0,Combat start: Gain different bonuses based on starting position. Front Two Rows:  80  Armor and Magic Resist. Gain  2  Mana when struck by an attack. Back Two Rows:  55  Ability Power. Gain  20  Mana every 3 seconds.
-Absolution,0,0,0,0,200,15,0,0,Heal allies within  2  hexes for  25%  of their missing Health every 5 seconds. They also take 10% less damage for 5 seconds (damage reduction does not stack).
-Fist of Fairness,0,0,0,0,0,15,0,20,Gain 2 effects: 50%  Attack Damage and  50  Ability Power. 30%   Omnivamp . Omnivamp : heal for some of damage dealt
-Rosethorn Vest,0,0,120,0,0,0,0,0,"Gain  8%  max health. Take  25%  reduced damage from attacks. When struck by any attack, deal  175  magic damage to all adjacent enemies. Cooldown: 2 seconds"
-Dvarapala Stoneplate,0,0,50,50,250,0,0,0,"Gain  20  Armor and  20  Magic Resist for each enemy targeting the holder. Also, regenerate 2% maximum Health each second."
-Sunlight Cape,0,0,20,0,300,0,0,0,"Every  1.5  seconds, deal  2%   Burn  and 33%  Wound  to an enemy within  3  hexes for  30  seconds. [Unique - only 1 per champion] Burn : Deals a percent of the target's maximum Health as true damage every second Wound : reduces healing received"
-Legacy of the Colossus,0,0,40,0,500,0,0,20,"Take  12%  less damage. While above  40% Health , take  24%  less damage, instead."
+Statikk Shiv,0,15,0,0,0,15,20,0,Every 3rd attack deals 35 magic damage and 30%  Shreds  4 enemies for 5 seconds. Shred : Reduce Magic Resist
+Hextech Gunblade,15,15,0,0,0,0,0,0,"Gain 22%  Omnivamp , which also heals the lowest percent Health ally. Omnivamp : heal for some of damage dealt"
+Storyweaver Emblem,0,0,20,0,0,0,0,0,The holder gains the Storyweaver trait. [Unique - only 1 per champion.]
+Dryad Emblem,0,0,0,0,150,0,0,0,The holder gains the Dryad trait. [Unique - only 1 per champion.]
+Umbral Emblem,0,0,0,0,0,0,0,20,The holder gains the Umbral trait. [Unique - only 1 per champion.]
+Fated Emblem,0,10,0,0,0,0,0,0,The holder gains the Fated trait. Fated Bonus: Restore  3%  Health every 3 seconds. [Unique - only 1 per champion.]
+Heavenly Emblem,0,0,0,20,0,0,0,0,The holder gains the Heavenly trait. [Unique - only 1 per champion.]
+Mythic Emblem,0,0,0,0,0,15,0,0,The holder gains the Mythic trait. [Unique - only 1 per champion.]
+Ghostly Emblem,10,0,0,0,0,0,0,0,The holder gains the Ghostly trait. [Unique - only 1 per champion.]
+Porcelain Emblem,0,0,0,0,0,0,10,0,The holder gains the Porcelain trait. [Unique - only 1 per champion.]
+Reaper Emblem,0,0,0,0,150,0,0,0,The holder gains the Reaper trait. [Unique - only 1 per champion.]
+Sage Emblem,0,0,0,0,150,0,0,0,The holder gains the Sage trait. [Unique - only 1 per champion.]
+Dragonlord Emblem,0,0,0,0,150,0,0,0,The holder gains the Dragonlord trait. [Unique - only 1 per champion.]
+Sniper Emblem,0,0,0,0,150,0,0,0,The holder gains the Sniper trait. [Unique - only 1 per champion.]
+Duelist Emblem,0,0,0,0,150,0,0,0,The holder gains the Duelist trait. [Unique - only 1 per champion.]
+Behemoth Emblem,0,0,0,0,150,0,0,0,The holder gains the Behemoth trait. [Unique - only 1 per champion.]
+Invoker Emblem,0,0,0,0,150,0,0,0,The holder gains the Invoker trait. [Unique - only 1 per champion.]
+Bruiser Emblem,0,0,0,0,150,0,0,0,The holder gains the Bruiser trait. [Unique - only 1 per champion.]
+Fortune Emblem,0,0,0,0,150,0,0,0,The holder gains the Fortune trait. [Unique - only 1 per champion.]
+Inkshadow Emblem,0,0,0,0,150,0,0,0,The holder gains the Inkshadow trait. [Unique - only 1 per champion.]
+Warden Emblem,0,0,0,0,150,0,0,0,The holder gains the Warden trait. [Unique - only 1 per champion.]
+Arcanist Emblem,0,0,0,0,150,0,0,0,The holder gains the Arcanist trait. [Unique - only 1 per champion.]
+Altruist Emblem,0,0,0,0,150,0,0,0,The holder gains the Altruist trait. [Unique - only 1 per champion.]
 Dragon's Will,0,0,0,115,0,0,0,0,"Gain  18%  max health. Every 2 seconds, heal  10%  max Health."
-Equinox,0,0,0,30,500,0,0,0,30%  Sunder  enemies within 3 hexes. Gain   50 Armor and Magic Resist  for the first  15 seconds  of combat. Sunder : Reduce Armor
-Quickestsilver,0,0,0,30,0,0,50,40,"Combat start: Gain immunity to crowd control for  30  seconds.  For 14 seconds, gain 7% Attack Speed every 2 seconds. [Unique - only 1 per champion]"
-Warmog's Pride,0,0,0,0,1000,0,0,0,Gain  12%  max health. Regenerate 1% maximum Health per second.
 Willbreaker,0,30,0,0,150,0,40,20,"After damaging a Shield, deal  50% more damage  for 3 seconds."
+Covalent Spark,0,15,0,50,400,0,0,0,"30%  Shred  enemies within  3  hexes. When enemies cast an Ability, deal magic damage equal to  250%  of their maximum Mana. Also, regenerate 1.5% maximum Health per second. [Direct damage item] Shred : Reduce Magic Resist"
+Quickestsilver,0,0,0,30,0,0,50,40,"Combat start: Gain immunity to crowd control for  30  seconds.  For 14 seconds, gain 7% Attack Speed every 2 seconds. [Unique - only 1 per champion]"
+Hextech Lifeblade,30,50,0,0,0,0,0,0,Gain  35%  Omnivamp. Damage dealt heals the lowest percent Health ally for the same amount.
+Statikk's Favor,0,50,0,0,0,15,20,0,Every 3rd attack deals  80  magic damage and  30%  Shreds   8  enemies for 5 seconds. Shred : Reduce Magic Resist
+Bulwark's Oath,0,0,40,0,0,30,0,0,"Once per combat at 40% Health, gain a  50%  max Health Shield that lasts  10  seconds and gain  60  Armor and  60  Magic Resist."
+Blue Blessing,60,60,0,0,0,20,0,0,"Max mana reduced by 10.  When the holder gets a takedown, they deal  20%  more damage for  12  seconds. [Unique - only 1 per champion]"
+Urf-Angel's Staff,0,50,0,0,0,15,0,0,Combat start: Gain  40  Ability Power every  4  seconds in combat.
+More More-ellonomicon,0,50,0,0,150,0,25,0,Attacks and Abilities deal  3%   Burn  and 33%  Wound  to enemies for  30  seconds. [Unique - only 1 per champion] Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received
+Rosethorn Vest,0,0,120,0,0,0,0,0,"Gain  8%  max health. Take  25%  reduced damage from attacks. When struck by any attack, deal  175  magic damage to all adjacent enemies. Cooldown: 2 seconds"
+Runaan's Tempest,35,0,0,20,0,0,20,0,"Attacks fire a bolt at a nearby enemy, dealing  110%  Attack Damage   as physical damage."
+Guinsoo's Reckoning,0,10,0,0,0,0,20,0,Attacks grant  10%  stacking Attack Speed.
+Fist of Fairness,0,0,0,0,0,15,0,20,Gain 2 effects: 50%  Attack Damage and  50  Ability Power. 30%   Omnivamp . Omnivamp : heal for some of damage dealt
+Sunlight Cape,0,0,20,0,300,0,0,0,"Every  1.5  seconds, deal  2%   Burn  and 33%  Wound  to an enemy within  3  hexes for  30  seconds. [Unique - only 1 per champion] Burn : Deals a percent of the target's maximum Health as true damage every second Wound : reduces healing received"
+Eternal Whisper,45,0,0,0,0,0,25,55,Physical damage 30%  Sunders  the target for  the rest of combat.  This effect does not stack. [Unique - only 1 per champion] Sunder : Reduce Armor
 Rascal's Gloves,0,0,0,0,150,0,0,20,Each round: Equip 2 random  Radiant  items. [Consumes 3 item slots.]
-Anima Visage,0,0,0,25,450,0,0,0,Heal 2.5% max Health every second.
-Death's Defiance,10,0,30,0,0,0,25,0,Gain 25%  Omnivamp . 50% of the damage the holder receives is instead dealt over 4 seconds as non-lethal damage. [Unique - only 1 per champion] Omnivamp : heal for some of damage dealt
-Eternal Winter,0,0,20,0,200,0,0,0,"Enemies who damage the holder are 20%  Chilled  for 1.5 seconds. After 7  Chills  from this item, the attacker is  Stunned  instead (Cooldown: 15 seconds). [Unique - only 1 per champion] Chill : reduce Attack Speed Stun : cannot move, attack, or cast Abilities"
-Infinity Force,25,25,25,25,250,25,25,0,Tons of EVERYTHING!
-Manazane,15,10,0,0,0,15,15,0,"After casting the first time in combat, gain 120 Mana over 5 seconds. [Unique - only 1 per champion]"
-Gold Collector,20,0,0,0,0,0,0,30,Attacks and Abilities execute enemies below 12% of their maximum Health. Executions have a 40% chance to drop   1 gold. [Unique - only 1 per champion]
-Zhonya's Paradox,0,45,30,30,0,0,0,0,"Once per combat at 40% Health, become invulnerable and untargetable for 3 seconds. [Unique - only 1 per champion]"
+Warmog's Pride,0,0,0,0,1000,0,0,0,Gain  12%  max health. Regenerate 1% maximum Health per second.
+Sterak's Megashield,30,0,0,0,400,0,0,0,"Once per combat at 60% Health, gain  30% max Health  and  55% Attack Damage ."
+Absolution,0,0,0,0,200,15,0,0,Heal allies within  2  hexes for  25%  of their missing Health every 5 seconds. They also take 10% less damage for 5 seconds (damage reduction does not stack).
+Brink of Dawn,30,0,30,0,0,0,0,0,"Once per combat: At 60% Health, briefly become untargetable and shed negative effects. Then,  heal 100% missing health and gain 85% bonus Attack Speed .  [Unique - only 1 per champion]"
+Crest of Cinders,0,0,0,0,0,0,60,0,Deal  8%  bonus damage. Attacks and Abilities  3%   Burn  and  33%   Wound  enemies for 5 seconds. Burn : Deals a percent of the target's maximum Health as true damage every second Wound : Reduces healing received
+Legacy of the Colossus,0,0,40,0,500,0,0,20,"Take  12%  less damage. While above  40% Health , take  24%  less damage, instead."
+Titan's Vow,0,0,35,0,0,0,30,0,"Gain  3%  Attack Damage and  3  Ability Power when attacking or taking damage, stacking up to 25 times. At full stacks, gain  50  Armor and  50  Magic Resist."
+Demonslayer,50,40,0,0,0,0,10,0,Deal  60%  more damage to enemies with more than 1600 maximum Health.
+Royal Crownshield,0,50,40,0,250,0,0,0,"Combat start: Gain a  50%  max Health Shield for 8 seconds.  When the shield expires, gain  50 Ability Power ."
+Blessed Bloodthirster,40,30,0,20,0,0,0,0,"Gain  40%   Omnivamp . Once per combat: At 40% Health, gain a  40%  max Health Shield that lasts up to 5 seconds. Omnivamp : heal for some of damage dealt"
+Rabadon's Ascended Deathcap,0,70,0,0,0,0,0,0,Deal  50%  bonus damage.
+Glamorous Gauntlet,0,65,0,0,0,0,0,75,"Abilities can critically strike. If the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
+Dvarapala Stoneplate,0,0,50,50,250,0,0,0,"Gain  20  Armor and  20  Magic Resist for each enemy targeting the holder. Also, regenerate 2% maximum Health each second."
+The Baron's Gift,0,55,0,0,200,0,20,0,"After casting an Ability, gain  80% Attack Speed  for  8 seconds ."
+Spear of Hirana,45,45,0,0,0,15,0,0,Attacks grant  10 bonus Mana .
+Equinox,0,0,0,30,500,0,0,0,30%  Sunder  enemies within 3 hexes. Gain   50 Armor and Magic Resist  for the first  15 seconds  of combat. Sunder : Reduce Armor
+Zenith Edge,65,0,0,0,0,0,0,75,"Abilities can critically strike. If the holder's abilities can already critically strike, gain 10% Critical Strike Damage instead."
+Luminous Deathblade,105,0,0,0,0,0,0,0,Deal  12%  bonus damage.
+Jak'sho the Protean,0,15,0,30,0,15,0,0,Combat start: Gain different bonuses based on starting position. Front Two Rows:  80  Armor and Magic Resist. Gain  2  Mana when struck by an attack. Back Two Rows:  55  Ability Power. Gain  20  Mana every 3 seconds.
 Hullcrusher,0,0,35,35,0,0,30,0,"Combat start: If there are no adjacent allies, gain 600 Health."
-Trickster's Glass,0,0,10,10,0,0,10,15,Summon a clone with 70% max Health and +30% max Mana. You cannot equip items to the clone. The clone benefits from active traits [Unique - only 1 per champion]
-Sniper's Focus,15,15,0,0,0,0,15,0,Gain   1 Attack Range. Damage is increased by 9% for each hex between the holder and their target.
-Deathfire Grasp,0,50,0,0,0,15,0,0,"Combat start: Blast the current target for 20% of their max Health as magic damage. For the next 10 seconds, deal 25% more damage. Damage dealt to the blasted target is increased to 35%. [Unique - only 1 per champion]"
+Manazane,15,10,0,0,0,15,15,0,"After casting the first time in combat, gain 120 Mana over 5 seconds. [Unique - only 1 per champion]"
 Goldmancer's Staff,0,45,0,0,0,15,0,0,Grant   1 Ability Power per   gold in your bank (up to   30 gold) and a 40% chance to drop   1 gold on enemy kill.
 Mogul's Mail,0,0,0,0,200,0,0,0,"Grants 1 Armor, 1 Magic Resist, and 6 Health when taking damage, stacking up to 40 times. At full stacks, grant   2 gold. [Unique - only 1 per champion]"
-Diamond Hands,0,25,0,0,400,0,0,0,"Once per combat: At 50% Health, become invulnerable for 1.5 seconds and grant   1 gold. [Unique - only 1 per champion]"
 Gambler's Blade,0,10,0,0,0,0,40,0,Grant   1% bonus Attack Speed per   gold in your bank (up to   30 gold). Each attack has a 4% chance to drop   1 gold.
-Aegis of the Legion,0,0,0,0,250,0,0,0,"Combat start: Grant 30% Attack Speed and 15 Armor and Magic Resist to the holder, adjacent allies in the same row, and all allies behind them for 12 seconds. ​​ [Support item]"
-Banshee's Veil,0,0,0,0,250,0,0,0,Combat start: Grant the holder and allies within 1 hexes in the same row immunity to crowd control and 25% Attack Speed for 18 seconds. [Support item] [Unique - only 1 per champion]
-Virtue of the Martyr,0,0,0,0,250,0,0,0,"Every 5 seconds, heal your team for 6.5% of their max Health. When the holder dies, the healing increases to 13% max Health and continues for 10 seconds. ​​ [Support item]"
-Chalice of Power,0,0,0,0,250,0,0,0,Combat start: Grant 25 Ability Power and 10 Mana to the holder and allies within 2 hexes in the same row. ​​ [Support item]
-Locket of the Iron Solari,0,0,0,0,250,0,0,0,"Combat start: The holder and allies within 2 hexes in the same row gain a 250 Shield, 20 Armor, and 20 Magic Resist for 20 seconds. ​​ [Support item]"
-Needlessly Big Gem,0,0,0,0,250,0,0,0,"If the holder is alive after 15 seconds of combat, grant living allies 40% bonus damage. ​​ [Support item] [Unique - only 1 per champion]"
-Obsidian Cleaver,0,0,0,0,250,0,0,0,Damage dealt 30%  Shreds  and 30%  Sunders  enemies for 15 seconds. Your team gains 8% Attack Damage and 8 Ability Power. ​​[Support item] [Unique - only 1 per champion] Shred : Reduce Magic Resist Sunder : Reduce Armor
-Randuin's Omen,0,0,0,0,250,0,0,0,Combat start: Grant   30 Armor and   30 Magic Resistance to the holder and adjacent allies. ​​ [Support item]
-Shroud of Stillness,0,0,0,0,250,0,0,0,Combat start: Shoot a beam that 30%  Mana Reaves  enemies. Your team gains 60 Health. ​​[Support item] [Unique - only 1 per champion] Mana Reave : increase maximum Mana until the next cast
-Zeke's Herald,0,0,0,0,250,0,0,0,Combat start: Grant   30% Attack Speed to the holder and allies within 2 hexes in the same row. ​​ [Support item]
-Zephyr,0,0,0,0,250,0,0,0,Combat start: Summon a whirlwind on the opposite side of the arena that removes the closest enemy from combat for 5 seconds.  Your team gains 8% Attack Speed. [Support item] [Ignores crowd control immunity.] [Unique - only 1 per champion]
+Diamond Hands,0,25,0,0,400,0,0,0,"Once per combat: At 50% Health, become invulnerable for 1.5 seconds and grant   1 gold. [Unique - only 1 per champion]"
+Trickster's Glass,0,0,10,10,0,0,10,15,Summon a clone with 70% max Health and +30% max Mana. You cannot equip items to the clone. The clone benefits from active traits [Unique - only 1 per champion]
+Anima Visage,0,0,0,25,450,0,0,0,Heal 2.5% max Health every second.
+Eternal Winter,0,0,20,0,200,0,0,0,"Enemies who damage the holder are 20%  Chilled  for 1.5 seconds. After 7  Chills  from this item, the attacker is  Stunned  instead (Cooldown: 15 seconds). [Unique - only 1 per champion] Chill : reduce Attack Speed Stun : cannot move, attack, or cast Abilities"
+Zhonya's Paradox,0,45,30,30,0,0,0,0,"Once per combat at 40% Health, become invulnerable and untargetable for 3 seconds. [Unique - only 1 per champion]"
+Sniper's Focus,15,15,0,0,0,0,15,0,Gain   1 Attack Range. Damage is increased by 9% for each hex between the holder and their target.
+Death's Defiance,10,0,30,0,0,0,25,0,Gain 25%  Omnivamp . 50% of the damage the holder receives is instead dealt over 4 seconds as non-lethal damage. [Unique - only 1 per champion] Omnivamp : heal for some of damage dealt
+Infinity Force,25,25,25,25,250,25,25,0,Tons of EVERYTHING!
+Deathfire Grasp,0,50,0,0,0,15,0,0,"Combat start: Blast the current target for 20% of their max Health as magic damage. For the next 10 seconds, deal 25% more damage. Damage dealt to the blasted target is increased to 35%. [Unique - only 1 per champion]"
+Gold Collector,20,0,0,0,0,0,0,30,Attacks and Abilities execute enemies below 12% of their maximum Health. Executions have a 40% chance to drop   1 gold. [Unique - only 1 per champion]
 Zz'Rot Portal,0,0,0,0,250,0,0,0,Summon a large Voidspawn. Its strength increases with each Stage. ​​ [Support item] [Unique - only 1 per champion]
+Shroud of Stillness,0,0,0,0,250,0,0,0,Combat start: Shoot a beam that 30%  Mana Reaves  enemies. Your team gains 60 Health. ​​[Support item] [Unique - only 1 per champion] Mana Reave : increase maximum Mana until the next cast
+Banshee's Veil,0,0,0,0,250,0,0,0,Combat start: Grant the holder and allies within 1 hexes in the same row immunity to crowd control and 25% Attack Speed for 18 seconds. [Support item] [Unique - only 1 per champion]
+Zephyr,0,0,0,0,250,0,0,0,Combat start: Summon a whirlwind on the opposite side of the arena that removes the closest enemy from combat for 5 seconds.  Your team gains 8% Attack Speed. [Support item] [Ignores crowd control immunity.] [Unique - only 1 per champion]
+Needlessly Big Gem,0,0,0,0,250,0,0,0,"If the holder is alive after 15 seconds of combat, grant living allies 40% bonus damage. ​​ [Support item] [Unique - only 1 per champion]"
+Zeke's Herald,0,0,0,0,250,0,0,0,Combat start: Grant   30% Attack Speed to the holder and allies within 2 hexes in the same row. ​​ [Support item]
+Obsidian Cleaver,0,0,0,0,250,0,0,0,Damage dealt 30%  Shreds  and 30%  Sunders  enemies for 15 seconds. Your team gains 8% Attack Damage and 8 Ability Power. ​​[Support item] [Unique - only 1 per champion] Shred : Reduce Magic Resist Sunder : Reduce Armor
+Virtue of the Martyr,0,0,0,0,250,0,0,0,"Every 5 seconds, heal your team for 6.5% of their max Health. When the holder dies, the healing increases to 13% max Health and continues for 10 seconds. ​​ [Support item]"
+Locket of the Iron Solari,0,0,0,0,250,0,0,0,"Combat start: The holder and allies within 2 hexes in the same row gain a 250 Shield, 20 Armor, and 20 Magic Resist for 20 seconds. ​​ [Support item]"
+Randuin's Omen,0,0,0,0,250,0,0,0,Combat start: Grant   30 Armor and   30 Magic Resistance to the holder and adjacent allies. ​​ [Support item]
+Aegis of the Legion,0,0,0,0,250,0,0,0,"Combat start: Grant 30% Attack Speed and 15 Armor and Magic Resist to the holder, adjacent allies in the same row, and all allies behind them for 12 seconds. ​​ [Support item]"
+Chalice of Power,0,0,0,0,250,0,0,0,Combat start: Grant 25 Ability Power and 10 Mana to the holder and allies within 2 hexes in the same row. ​​ [Support item]
