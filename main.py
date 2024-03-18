@@ -12,33 +12,50 @@ from helper_functions import print_formatted_dict
 
 def main():
 
-    # # items scraper 
-    # url = 'https://tactics.tools/info/items'
-    # html_content = get_html_content(url)
-    # if html_content:
-    #     items_data = extract_items_data(html_content)
-    #     for item_data in items_data:
-    #         print_formatted_dict(item_data)
-    #         print()
-    #     export_items_to_csv(items_data, "10", "test")
+    # items scraper. give set and patch
+    url = 'https://tactics.tools/info/items'
+    html_content = get_html_content(url)
+    if html_content:
+        items_data = extract_items_data(html_content)
+        for item_data in items_data:
+            print_formatted_dict(item_data)
+            print()
+        export_items_to_csv(items_data, "10", "test")
+    # end items scraper function. end result is csv is generated
 
-    # # champions scraper
-    # url = 'https://lolchess.gg/champions/set10/'
-    # html_content = get_html_content(url)
-    # if html_content:
-    #     champions_data = extract_champion_urls(html_content)
+    # champions scraper.  give set and patch
+    url = 'https://lolchess.gg/champions/set10/'
+    html_content = get_html_content(url)
+    if html_content:
+        champions_data = extract_champion_urls(html_content)
 
-    # champs_data = []
-    # for c in champions_data:
-    #     url = 'https://lolchess.gg' + c[0]
-    #     html_content = get_html_content(url)
-    #     if html_content:
-    #         champion_data = extract_champion_data(html_content, c[1])
-    #         champs_data.append(champion_data)
+    champs_data = []
+    for c in champions_data:
+        url = 'https://lolchess.gg' + c[0]
+        html_content = get_html_content(url)
+        if html_content:
+            champion_data = extract_champion_data(html_content, c[1])
+            champs_data.append(champion_data)
 
-    #     print_formatted_dict(champion_data)
+        print_formatted_dict(champion_data)
 
-    # export_champion_details_to_csv(champs_data, "10", "test")
+    export_champion_details_to_csv(champs_data, "10", "test")
+    # end champions scraper function. end result is csv is generated
+
+
+    # main loop:
+        # 1. can import champion data to csv
+        # 2. can import item data to csv
+
+        # 3. run a simulation
+            # create all champions objects. create all items objects.
+            # ask user to select from different types of simulation options available.
+                # options include: 2 units fight. after being given items. (only option currently available)
+                    # run simulation and export results
+    
+        # 4. quit
+    # end loop
+    
 
     # Get a dictionary of Champion objects
     all_champions = create_champions(10, 'test')
