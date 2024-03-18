@@ -7,11 +7,14 @@ from simulation_system.simulation_steps import Simulation_Step
 from champions.champion_stat_tracker import ChampionStatTracker
 
 class Champion:
-    def __init__(self, name, star_level=1, health=0, attack_damage=0, ability_power=0, armor=0,
+    def __init__(self, name, cost=1, star_level=1, health=0, attack_damage=0, ability_power=0, armor=0,
                  magic_resist=0, starting_mana=0, mana_to_cast=0, attack_speed=0, attack_range=0, traits = [], description=""):
         
         self.name = name
         self.star_level = star_level
+
+        self.cost = cost
+
         self.traits = traits
 
         self.stat_tracker = ChampionStatTracker(self)
@@ -54,6 +57,8 @@ class Champion:
 
         self.outgoing_damage_amp_percentage = 0
         self.incoming_damage_reduction_percentage = 0
+        self.bonus_healing_percentage = 0
+        self.bonus_shielding_percentage = 0
 
         # debuff stats
         self.wound_amount = 0
@@ -248,8 +253,9 @@ class Champion:
         self.apply_omnivamp(amount)
 
     def deal_healing(self, target, amount):
+        amount *= (self.bonus_healing_percentage+1)
         self.activate_effects(Simulation_Step.BeforeDealHealing, target, [amount])
-
+        
         self.stat_tracker.update_healing_done(amount, True)
 
         target.heal(amount)
@@ -295,8 +301,10 @@ class Champion:
         self.shields.append([amount, shield_up_time])
 
     def deal_shielding(self, target, amount, shield_up_time):
+        amount *= (self.bonus_shielding_percentage+1)
         self.stat_tracker.update_shielding_done(amount, True)
         target.add_shield(amount, shield_up_time)
+        # print(f"{self.name} shields {target.name} for {round(amount,3)} shield!")
 
     def become_burned(self, amount, time):
         self.burn_instances.append([amount, time])

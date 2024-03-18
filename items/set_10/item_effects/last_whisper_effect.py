@@ -1,16 +1,16 @@
 # items.item_effects.last_whisperer_effect
 from simulation_system.simulation_steps import Simulation_Step
 
-def get_last_whisperer_effects():
+def get_last_whisper_effects():
      
     effects = []
 
-    effects.append(get_last_whisperer_effect_activation)
-    effects.append(get_last_whisperer_effect_end)
+    effects.append(get_last_whisper_effect_activation)
+    effects.append(get_last_whisper_effect_end)
     
     return effects
 
-def get_last_whisperer_effect_activation():
+def get_last_whisper_effect_activation():
 
     # data is used to pass in inputs for effects
     # returns didtrigger, triggertime
@@ -33,7 +33,7 @@ def get_last_whisperer_effect_activation():
 
     return effect
 
-def get_last_whisperer_effect_end():
+def get_last_whisper_effect_end():
     
     def effect(simulation_step, champion, enemy_champion, item, current_simulation_time, damage, amount_of_times_triggered=0, most_recent_previous_trigger_time=-1):
         # print(f"{current_simulation_time}")

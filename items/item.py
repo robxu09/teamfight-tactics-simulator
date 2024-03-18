@@ -56,8 +56,7 @@ class Item:
     def give_base_stats(self, simulation_step, champion):
 
         if(simulation_step == Simulation_Step.OnInitiation):
-
-            champion.attack_damage += self.bonus_attack_damage * champion.original_attack_damage
+            champion.attack_damage += self.bonus_attack_damage * champion.original_attack_damage * 0.01
             champion.ability_power += self.bonus_ability_power
             champion.set_magic_resist(champion.magic_resist + self.bonus_magic_resist)
             champion.set_armor(champion.armor + self.bonus_armor)
@@ -65,8 +64,8 @@ class Item:
             champion.max_health += self.bonus_health
             champion.starting_mana += self.bonus_starting_mana
             champion.mana += self.bonus_starting_mana
-            champion.set_attack_speed(champion.attack_speed + (self.bonus_attack_speed * champion.original_attack_speed))
+            champion.set_attack_speed(champion.attack_speed + (self.bonus_attack_speed * 0.01 * champion.original_attack_speed))
             champion.set_critical_strike_chance(champion.critical_strike_chance + self.bonus_critical_strike_chance)
             champion.critical_strike_damage += self.bonus_critical_strike_damage
-            champion.attack_range += self.bonus_attack_range
+            # champion.attack_range += self.bonus_attack_range
             champion.omnivamp += self.bonus_omnivamp

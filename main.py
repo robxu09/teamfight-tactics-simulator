@@ -12,33 +12,33 @@ from helper_functions import print_formatted_dict
 
 def main():
 
-    # items scraper 
-    url = 'https://tactics.tools/info/items'
-    html_content = get_html_content(url)
-    if html_content:
-        items_data = extract_items_data(html_content)
-        for item_data in items_data:
-            print_formatted_dict(item_data)
-            print()
-        export_items_to_csv(items_data, "10")
+    # # items scraper 
+    # url = 'https://tactics.tools/info/items'
+    # html_content = get_html_content(url)
+    # if html_content:
+    #     items_data = extract_items_data(html_content)
+    #     for item_data in items_data:
+    #         print_formatted_dict(item_data)
+    #         print()
+    #     export_items_to_csv(items_data, "10", "test")
 
-    # champions scraper
-    url = 'https://lolchess.gg/champions/set11/'
-    html_content = get_html_content(url)
-    if html_content:
-        champions_data = extract_champion_urls(html_content)
+    # # champions scraper
+    # url = 'https://lolchess.gg/champions/set10/'
+    # html_content = get_html_content(url)
+    # if html_content:
+    #     champions_data = extract_champion_urls(html_content)
 
-    champs_data = []
-    for c in champions_data:
-        url = 'https://lolchess.gg' + c[0]
-        html_content = get_html_content(url)
-        if html_content:
-            champion_data = extract_champion_data(html_content, c[1])
-            champs_data.append(champion_data)
+    # champs_data = []
+    # for c in champions_data:
+    #     url = 'https://lolchess.gg' + c[0]
+    #     html_content = get_html_content(url)
+    #     if html_content:
+    #         champion_data = extract_champion_data(html_content, c[1])
+    #         champs_data.append(champion_data)
 
-        print_formatted_dict(champion_data)
+    #     print_formatted_dict(champion_data)
 
-    export_champion_details_to_csv(champs_data, "10", "test")
+    # export_champion_details_to_csv(champs_data, "10", "test")
 
     # Get a dictionary of Champion objects
     all_champions = create_champions(10, 'test')
@@ -54,44 +54,15 @@ def main():
     # Create items
     all_items = create_items(10, 'test')
 
-    # components
-    chain_vest = all_items.get("Chain Vest")
-    negatron_cloak = all_items.get("Negatron Cloak")
+    bt = all_items.get("Bloodthirster")
 
-    bloodthirster = all_items.get("Bloodthirster")
-    deathblade = all_items.get("Deathblade")
-    infinity_edge = all_items.get("Infinity Edge")
-    jeweled_gauntlet = all_items.get("Jeweled Gauntlet")
-    last_whisperer = all_items.get("Last Whisperer")
-    warmogs_armor = all_items.get("Warmog's Armor")
-
-    # give items to champion 1
-    # champion1.add_items(deathblade)
-    champion1.add_items(bloodthirster)
-    # champion1.add_items(last_whisperer)
-    # champion1.add_items(infinity_edge)
-    champion1.add_items(jeweled_gauntlet)
-    champion1.add_items(warmogs_armor)
-    # champion1.add_items(warmogs_armor)
-
-
-    # give items to champion 2
-    champion2.add_items(bloodthirster)
-    # champion2.add_items(infinity_edge)
-    # champion2.add_items(warmogs_armor)
-    champion2.add_items(warmogs_armor)
-    champion2.add_items(negatron_cloak)
-    # champion2.add_items(warmogs_armor)
-    # champion2.add_items(warmogs_armor)
-    # champion2.add_items(chain_vest)
+    # champion1.add_items(bt)
+    champion2.add_items(bt)
 
     # Create and run the one versus one scenario
     one_vs_one_scenario = OneVsOne()
-    # one_vs_one_scenario.run(champion1, champion2, 50)
+    one_vs_one_scenario.run(champion1, champion2, 50)
 
-
-    # champion1.print_champion_items()
-    # champion2.print_champion_items()
 
 if __name__ == "__main__":
     main()

@@ -259,14 +259,14 @@ def parse_item_stats(item_stats):
 
     return data
 
-def export_items_to_csv(items_list, set):
+def export_items_to_csv(items_list, set, patch):
 
     if(len(items_list) > 0):
         # Specify the keys for the CSV header
         fieldnames = items_list[0].keys()
 
         # Specify the path where you want to save the CSV file
-        csv_directory = "csv/set_" + set  # Relative path to the directory
+        csv_directory = "csv/set_" + set + "/patch_" + patch # Relative path to the directory
 
         # Create the directory if it doesn't exist
         os.makedirs(csv_directory, exist_ok=True)
