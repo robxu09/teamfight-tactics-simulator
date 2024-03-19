@@ -8,7 +8,7 @@ class Item:
                  bonus_attack_speed=0, bonus_critical_strike_chance=0.0, bonus_critical_strike_damage=0, 
                  bonus_attack_range=0, bonus_omnivamp=0, description=""):
         
-        self.effect_implement = False
+        self.effect_implemented = False
 
         self.name = name
         self.description = ""
@@ -34,7 +34,7 @@ class Item:
         self.most_recent_effects_cast_time = []
 
     def set_effects(self, custom_effects):
-        
+        self.effect_implemented = True
         c = custom_effects()
 
         for effect in c:

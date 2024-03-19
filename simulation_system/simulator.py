@@ -8,27 +8,56 @@ from scenarios.one_vs_one import OneVsOne
 
 def run_1v1_with_two_champions(set, patch):
 
-    # ask for input to create a champion. give error if none found
-    # ask for input to add items. give available item options. keep looping and asking for if want another item
-    # run onevsone with the two champions
 
     # Get a dictionary of Champion objects
     all_champions = create_champions(set, patch)
-
-    Vi = all_champions.get("Vi_1")
-    
-    Annie = all_champions.get("Annie_2")
-
-    champion1 = Annie
-    champion2 = Vi
-
     # Create items
     all_items = create_items(set, patch)
 
-    bt = all_items.get("Bloodthirster")
+    print("One vs One: ")
 
-    # champion1.add_items(bt)
-    champion2.add_items(bt)
+    # create champion 1
+    while True:
+        user_input = input("Enter name of champion 1 (ie. 'Champion Name_3'): ")
+        champion1 = all_champions.get(user_input)
+        if champion1:
+            break
+        else:
+            print("invalid champion name")
+
+    while True:
+        user_input = input(f"Enter name of item to give to {champion1.name}. Enter N to stop adding items: ")
+        item = all_items.get(user_input)
+        if user_input.lower() == "n":
+            print("Done adding items")
+            break
+        elif item:
+            champion1.add_items(item)
+            print(f"Gave {champion1.name} one {item.name}.")
+        else:
+            print("invalid item name")
+    
+    # create champion 2
+    while True:
+        user_input = input("Enter name of champion 2 (ie. 'Champion Name_3'): ")
+        champion2 = all_champions.get(user_input)
+        if champion2:
+            break
+        else:
+            print("invalid champion name")
+
+
+    while True:
+        user_input = input(f"Enter name of item to give to {champion2.name}. Enter N to stop adding items: ")
+        item = all_items.get(user_input)
+        if user_input.lower() == "n":
+            print("Done adding items")
+            break
+        elif item:
+            champion2.add_items(item)
+            print(f"Gave {champion2.name} one {item.name}.")
+        else:
+            print("invalid item name")
 
     # Create and run the one versus one scenario
     one_vs_one_scenario = OneVsOne()
@@ -71,3 +100,4 @@ def scrape_items_to_csv(set, patch):
             print()
         export_items_to_csv(items_data, set, patch)
     # end items scraper function. end result is csv is generated
+        
