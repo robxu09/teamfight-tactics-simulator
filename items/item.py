@@ -6,11 +6,12 @@ class Item:
     def __init__(self, name, bonus_attack_damage=0, bonus_ability_power=0,
                  bonus_magic_resist=0, bonus_armor=0, bonus_health=0, bonus_starting_mana=0,
                  bonus_attack_speed=0, bonus_critical_strike_chance=0.0, bonus_critical_strike_damage=0, 
-                 bonus_attack_range=0, bonus_omnivamp=0, is_component = True, description=""):
+                 bonus_attack_range=0, bonus_omnivamp=0, description=""):
         
+        self.effect_implement = False
+
         self.name = name
         self.description = ""
-        self.is_component = is_component
 
         # bonus stats
         self.bonus_attack_damage = bonus_attack_damage
