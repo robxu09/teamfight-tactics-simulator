@@ -1,6 +1,14 @@
 from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data, extract_items_data, export_items_to_csv, export_champion_details_to_csv
 from helper_functions import print_formatted_dict
 
+def run_1v1_with_two_champions():
+
+    # ask for input to create a champion. give error if none found
+    # ask for input to add items. give available item options. keep looping and asking for if want another item
+    # run onevsone with the two champions
+
+    return
+
 def scrape_champions_and_items_to_csv(set, patch):
     scrape_champions_to_csv(set, patch)
     scrape_items_to_csv(set, patch)
