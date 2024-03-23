@@ -1,3 +1,5 @@
+import copy
+
 from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data, extract_items_data, export_items_to_csv, export_champion_details_to_csv
 from helper_functions import print_formatted_dict
 from champions.champion_data import create_champions
@@ -19,7 +21,7 @@ def run_1v1_with_two_champions(set, patch):
     # create champion 1
     while True:
         user_input = input("Enter name of champion 1 (ie. 'Champion Name_3'): ")
-        champion1 = all_champions.get(user_input)
+        champion1 = copy.deepcopy(all_champions.get(user_input))
         if champion1:
             break
         else:
@@ -27,7 +29,7 @@ def run_1v1_with_two_champions(set, patch):
 
     while True:
         user_input = input(f"Enter name of item to give to {champion1.name}. Enter N to stop adding items: ")
-        item = all_items.get(user_input)
+        item = copy.deepcopy(all_items.get(user_input))
         if user_input.lower() == "n":
             print("Done adding items")
             break
@@ -40,7 +42,7 @@ def run_1v1_with_two_champions(set, patch):
     # create champion 2
     while True:
         user_input = input("Enter name of champion 2 (ie. 'Champion Name_3'): ")
-        champion2 = all_champions.get(user_input)
+        champion2 = copy.deepcopy(all_champions.get(user_input))
         if champion2:
             break
         else:
@@ -49,7 +51,7 @@ def run_1v1_with_two_champions(set, patch):
 
     while True:
         user_input = input(f"Enter name of item to give to {champion2.name}. Enter N to stop adding items: ")
-        item = all_items.get(user_input)
+        item = copy.deepcopy(all_items.get(user_input))
         if user_input.lower() == "n":
             print("Done adding items")
             break
@@ -61,9 +63,14 @@ def run_1v1_with_two_champions(set, patch):
 
     # Create and run the one versus one scenario
     one_vs_one_scenario = OneVsOne()
-    one_vs_one_scenario.run(champion1, champion2, 50)
+    results = one_vs_one_scenario.run(champion1, champion2, 50)
+    print_results(results)
 
     return
+
+
+def print_results(results):
+    print_formatted_dict(results)
 
 def scrape_champions_and_items_to_csv(set, patch):
     scrape_champions_to_csv(set, patch)

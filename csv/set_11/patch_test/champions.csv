@@ -1,0 +1,301 @@
+name,cost,traits,health,attack damage,ability power,attack speed,armor,magic resist,attack range,starting mana,mana to cast,description
+Aatrox,2,"['Ghostly ', 'Inkshadow ', 'Bruiser']",700 / 1260 / 2268,55 / 83 / 124,100,0.65,45,45,1,40,90,"Phantom Blade
+Active | Mana: 40/90
+20% Shred the current target for 4 seconds and deal magic damage to them. Heal Health. Shred: Reduce Magic Resist
+Damage: 260% / 390% / 600% AP Heal: 200% / 250% / 300% AP
+"
+Ahri,1,"['Fated ', 'Arcanist']",500 / 900 / 1620,30 / 45 / 68,100,0.75,15,15,3+,0,60,"Love Bomb
+Active | Mana: 0/60
+Deal magic damage to the current target and magic damage to adjacent enemies. Fated Bonus: Gain 30 AP.
+Damage: 280% / 420% / 630% AP Secondary Damage: 130% / 195% / 295% AP
+"
+Alune,3,"['Umbral ', 'Invoker']",650 / 1170 / 2106,40 / 60 / 90,100,0.7,25,25,3+,0,60,"Lunar Barrage
+Active | Mana: 0/60
+Rain meteors through the row with the most total enemy Health. Meteors deal magic damage split between all enemies hit. Deal magic damage to the current target. All enemies hit are 20% Shredded for 6 seconds. Grant Attack Speed split amongst allies in Alune's row for 5 seconds. Shred: Reduce Magic Resist
+Meteor Damage: 360% / 540% / 860% AP Target Damage: 160% / 240% / 380% AP Attack Speed: 20% / 25% / 30%
+"
+Amumu,3,"['Porcelain ', 'Warden']",900 / 1620 / 2916,60 / 90 / 135,100,0.6,50,50,1,40,80,"Herbal Tea-rs
+Active | Mana: 40/80
+Over the next 3 seconds, heal Health and cry on adjacent units. Tears heal allies for Health and deal magic damage to enemies.
+Self Heal: 250% / 300% / 375% AP Ally Heal: 80% / 100% / 125% AP Damage: 150% / 225% / 360% AP
+"
+Annie,4,"['Fortune ', 'Invoker']",850 / 1530 / 2754,55 / 83 / 124,100,0.65,60,60,1,70,140,"Get'em. Tibbers!
+Active | Mana: 70/140
+Passive: Heal Health when damaging a Burning enemy. Active: On first cast, hop on Tibbers, gaining max Health and Stunning enemies within 2 hexes for 1.5 seconds. Deal magic damage, Burn, and Wound enemies within 2 hexes for 8 seconds. Burn: Deal 1% of the target's max Health as true damage every second Wound: Reduce healing received by 33%.
+Damage: 150% / 225% / 2500% AP Bonus Health AP: 300% / 350% / 1500% AP Bonus Health: 15% HP + Bonus Health AP Passive Heal = 5% HP
+"
+Aphelios,3,"['Fated ', 'Sniper']",650 / 1170 / 2106,60 / 90 / 135,100,0.75,25,25,3+,40,100,"Duskwave
+Active | Mana: 40/100
+20% Sunder the nearest 3 enemies for 7 seconds. Then fire 3 shots at them, dealing physical damage each. Fated Bonus: Gain 25% Attack Damage. Sunder: Reduce Armor
+Damage AD: 185% / 185% / 195% Damage AP: 30% / 45% / 70% Total Damage: Damage AD + Damage AP
+"
+Ashe,4,"['Porcelain ', 'Sniper']",700 / 1260 / 2268,65 / 98 / 146,100,0.8,30,30,3+,25,100,"Rain of Shards
+Active | Mana: 25/100
+Passive: Start with 15 arrows. Gain 1 every 3 attacks. Active: Fire a volley split between the current target and the 3 closest enemies within range, dealing physical damage per stored arrow for a total of physical damage.
+Arrows Gained: 1 / 1 / 3 Damage Per Arrow AD: 40% / 40% / 100% Damage Per Arrow AP: 4% / 6% / 20% Damage Per Arrow: AD + AP
+"
+Azir,5,"['Dryad ', 'Invoker']",800 / 1440 / 2592,45 / 68 / 101,100,0.85,35,35,3+,30,120,"Blight
+Active | Mana: 30/120
+Fire a beam through the current target, dealing magic damage to enemies hit. Spawn a Guardian adjacent to the first enemy hit with some Health. The Guardian does not move or attack.
+Damage: 500 / 750 / 5000 AP Guardian Health: 1100 / 1500 / 8000
+"
+Bard,3,"['Mythic ', 'Trickshot']",650 / 1170 / 2106,50 / 75 / 113,100,0.8,25,25,3+,0,50,"Meep Meep!
+Active | Mana: 0/50
+For the next 6 seconds, attacks instead throw 2 Meeps, each dealing physical damage and magic damage.
+Physical Damage: 65% / 65% / 70% AD Magic Damage: 24% / 36% / 60% AP
+"
+Caitlyn,1,"['Ghostly ', 'Sniper']",500 / 900 / 1620,50 / 75 / 113,100,0.7,15,15,3+,0,105,"Ace in the Hole
+Active | Mana: 0/105
+Fire a bullet towards the farthest enemy, dealing physical damage to the first enemy hit.
+Damage AP: 100% / 150% / 225% Damage: 700% AD + Damage AP
+"
+Cho'Gath,1,"['Mythic ', 'Behemoth']",650 / 1170 / 2106,50 / 75 / 113,100,0.55,40,40,1,40,90,"Eruption
+Active | Mana: 40/90
+Gain Shield for 4 seconds and breathe a cone of fire, dealing magic damage, Burning, and Wounding enemies hit for 9 seconds. Burn: Deal 1% of the target's max Health as true damage every second Wound: Reduce healing received by 50%
+Damage: 200% / 300% / 450% AP Shield: 280% / 350% / 420% AP
+"
+Darius,1,"['Umbral ', 'Duelist']",650 / 1170 / 2106,40 / 60 / 90,100,0.7,40,40,1,0,30,"Decimate
+Active | Mana: 0/30
+Deal magic damage to adjacent enemies. For the next 4 seconds, attacks deal bonus magic damage.
+Damage: 200% / 300% / 450% AP Damage On Hit: 90% / 135% / 200% AP
+"
+Diana,3,"['Dragonlord ', 'Sage']",900 / 1620 / 2916,45 / 68 / 101,100,0.8,55,55,1,70,120,"Purification Rites
+Active | Mana: 70/120
+Heal Health and create a 1-hex sacred zone around Diana for 4 seconds, taking 30% reduced damage from enemies outside the zone. While the zone is up, Diana's attacks deal bonus magic damage.
+Damage On Hit: 75% / 110% / 170% AP Heal: 250% / 300% / 375% AP
+"
+Galio,4,"['Storyweaver ', 'Bruiser']",1100 / 1980 / 3564,60 / 90 / 135,100,0.6,60,60,1,70,140,"Savior's Protection
+Active | Mana: 70/140
+Taunt enemies within 3 hexes and gain Armor and Magic Resist for 4 seconds. Galio is immobile and unstoppable during this time. After, deal magic damage to all enemies in range and grant Shield to allies in range for 4 seconds. Taunt: enemies that are able and in range must attack the taunter
+Damage: 100% / 150% / 1800% AP Shield: 160% / 200% / 2000% AP Armor: 85 / 120 / 400 + 50% AR Magic Resist: 130 / 160 / 1000 + 50% MR
+"
+Garen,1,"['Storyweaver ', 'Warden']",600 / 1080 / 1944,55 / 83 / 124,100,0.6,40,40,1,30,80,"Courage
+Active | Mana: 30/80
+Gain Shield for 5 seconds. Garen's next attack deals additional damage.
+Shield: 250% / 275% / 300% AP Damage: 450% / 450% / 450% AD
+"
+Gnar,2,"['Dryad ', 'Warden']",700 / 1260 / 2268,60 / 90 / 135,100,0.7,45,45,1,10,60,"Boulder Toss
+Active | Mana: 10/60
+Passive: Gain Attack Damage upon attacking or getting hit, up to 50 times. Active: Fling a boulder at the current target, dealing physical damage to targets in a line.
+Damage: 310% / 310% / 320% Passive Bonus: 2% AP
+"
+Hwei,5,"['Mythic ', 'Artist']",800 / 1440 / 2592,50 / 75 / 113,100,0.8,40,40,3+,30,105,"A Brush with Fate
+Active | Mana: 30/105
+Create an expanding paint pool around the most units that heals allies within for Health every second for 3 seconds. After 3 seconds, it explodes, healing allies within for Health and dealing magic damage to enemies.
+Heal: 40% / 60% / 1000% AP End Heal: 120% / 150% / 1000% AP Damage: 200% / 300% / 2000% AP
+"
+Illaoi,3,"['Ghostly ', 'Arcanist', 'Warden']",900 / 1620 / 2916,50 / 75 / 113,100,0.6,50,50,1,30,90,"Prophet of Spirits
+Active | Mana: 30/90
+Gain Shield and summon a tentacle near the current target for 4 seconds. The tentacle slams every second, dealing magic damage in a line and healing illaoi for Health.
+Shield: 325% / 400% / 500% AP Damage: 80% / 120% / 190% AP Heal Per Slam: 50% / 60%  / 70% AP
+"
+Irelia,5,"['Storyweaver ', 'Duelist']",900 / 1620 / 2916,75 / 113 / 169,100,0.9,40,40,3+,0,9223372036854775807,"Blade Dance
+Passive | Mana: No cost
+Passive: Attacks send blades that dart between enemies, dealing physical damage and 30% Sunder for 5 seconds. Cast every 8 attacks. Active: Command the blades to swiftly strike the three lowest Health enemies, dealing physical damage and applying on-hit effects. Irelia converts 25% of bonus attack speed into faster blade movement, and 70% into Attack Damge. Sunder: Reduce Armor
+Passive Damage: 150% / 150% / 700% AD Active Damage AD: 300% / 300% / 2000% AD Active Damage: Active Damage AD + 100% AP
+"
+Janna,2,"['Dragonlord ', 'Invoker']",600 / 1080 / 1944,40 / 60 / 90,100,0.75,20,20,3+,25,75,"Heavenly Winds
+Active | Mana: 25/75
+Grant Shield to the 2 lowest Health ally for 4 seconds. Then, deal magic damage to the 2 nearest enemies.
+Shield: 120% / 150% / 200% AP Damage: 180% / 270% / 415% AP
+"
+Jax,1,"['Inkshadow ', 'Warden']",650 / 1170 / 2106,45 / 68 / 101,100,0.65,40,40,1,20,60,"Counter Strike
+Active | Mana: 20/60
+Gain 60 Armor and Magic Resist for the next 2 seconds. Afterwards, deal magic damage to adjacent enemies. The current target takes magic damage and is Stunned for 1.5 seconds.
+Area Damage: 100% / 150% / 225% AP Damage: 250% / 375% / 560% AP
+"
+Kai'Sa,4,"['Inkshadow ', 'Trickshot']",700 / 1260 / 2268,70 / 105 / 158,100,0.85,30,30,3+,20,75,"Inkstorm
+Active | Mana: 20/75
+Fire 20 waves at the current target over 2 seconds, each dealing physical damage to the first enemy hit. If an enemy is hit by 10 waves, they take damage per wave instead.
+Wave Damage AD: 45% / 45% / 100% Wave Damage AP: 10 / 15 / 45 Wave Damage: Wave Damage AD + Wave Damage AP Amplified Wave Damage AD: 70% / 70% / 140% AD Amplified Wave Damage AD: Amplified Wave Damage AD+ 10% AP
+"
+Kayn,4,"['Ghostly ', 'Reaper']",1000 / 1800 / 3240,75 / 113 / 169,100,0.9,70,70,1,0,60,"Shadow Assassin
+Active | Mana: 0/60
+On first cast, transform, dealing physical damage to nearby enemies. While transformed, gain 30% Critical Stirke Chance and critical attacks damage adjacent enemies. If the spin only hits one enemy, the damage in increased by 100%. Subsequent casts deal physical damage to units in a line through the target instead.
+Transform Damage: 400% / 400% / 1000% Subsequent Damage AD: 240% / 240% / 600% Subsequent Damage AP: 30% / 45% / 135% Subsequent Damage: Subsequent Damage AD + Subsequent Damage AP
+"
+Kha'Zix,1,"['Heavenly ', 'Reaper']",600 / 1080 / 1944,50 / 75 / 113,100,0.75,35,35,1,0,40,"Leap!
+Active | Mana: 0/40
+Leap towards the lowest Health enemy within 3 hexes and deal physical damage.
+Damage AP: 20% / 30% / 45% Damage AD: 310% / 310% / 310% Damage: Damage AD + Damage AP
+"
+Kindred,2,"['Dryad ', 'Fated ', 'Reaper']",550 / 990 / 1782,40 / 60 / 90,100,0.7,20,20,3+,0,30,"Flourish of Arrows
+Active | Mana: 0/30
+Dash away from the current target and deal magic damage to them and magic damage to the nearst enemy. Fated Bonus: Gain 18% Attack Speed.
+Damage: 115% / 170% / 260% AP Secondary Damage: 65% / 100% / 155% AP
+"
+Kobuko,1,"['Fortune ', 'Bruiser']",600 / 1080 / 1944,65 / 98 / 146,100,0.5,30,30,1,30,80,"Money Dance
+Active | Mana: 30/80
+Passive: When you gain interest, gain permanent Health per gold collected. (Gain more Health per Round in Hyper Roll) Active: Heal Health over 2 seconds. Kobuko's next attack deals bonus magic damage.
+Heal: 350% / 400% / 475% AP Damage: 10% Health Health Gain: 10 / 12 / 20
+"
+Kog'Maw,1,"['Mythic ', 'Invoker', 'Sniper']",500 / 900 / 1620,30 / 45 / 68,100,0.7,15,15,3+,0,30,"Raining Artillery
+Active | Mana: 0/30
+Deal magic damage to the lowest Health enemy within range. Every 2 casts, gain +1 Attack Range.
+Damage: 160% / 225% / 315% AP
+"
+Lee Sin,4,"['Dragonlord ', 'Duelist']",950 / 1710 / 3078,70 / 105 / 158,100,0.85,55,55,1,40,100,"Dragon's Dance
+Active | Mana: 40/100
+Kick the target's sprit out of their body, dealing physical damage. 30% Mana Reaving them, and Stunning them. Enemies hit by the sprit take physical damage. Gain Shield for 3 seconds. Mana Reave: Increase max Mana until the next cast
+Damage: 450% / 450% / 900% AD + Damage Increase AOE Damage: 150% / 150% / 450% AD + Damage Increase Damage Increase: 30% bonus AS Shield: 200% / 250% / 1000% AP
+"
+Lillia,4,"['Mythic ', 'Invoker']",700 / 1260 / 2268,45 / 68 / 101,100,0.75,30,30,3+,0,50,"Eep!
+Active | Mana: 0/50
+Hurl an orb towards the current target, dealing magic damage to the first enemy hit and adjacent enemies. It continues rolling as a smaller orb, dealing magic damage to enemies it hits. Every third cast launches a mega orb at her target that deals magic damage and splits into 3 smaller orbs that roll towards the farthest enemies.
+Damage: 220% / 330% / 900% AP Small Orb Damage: 100% / 150% / 350% AP Mega Orb Damage: 360% / 540% / 1600% AP
+"
+Lissandra,5,"['Porcelain ', 'Arcanist']",1000 / 1800 / 3240,50 / 75 / 113,100,0.8,55,55,2,40,100,"Let 'em Brew
+Active | Mana: 40/100
+Steep the cureent target in a teapot. Stunning and dealing magic damage over a few seconds. If they die, there's a 50% chance that Lissandra turns them into a loot orb. Otherwise, Lissandra throws the teapot at the largest group of enemies, dealing magic damage to all enemies hit. (Rewards are doubled in Hyper Roll) If the target is the last enemy remaining, kill them instantly.
+Number of Targets: 1 / 1 / 15 Duration: 3 / 3 / 15 Damage: 640% / 960% / 8888% AP Explosion Damage: 150% / 225% / 600% AP
+"
+Lux,2,"['Porcelain ', 'Arcanist']",550 / 990 / 1782,40 / 60 / 90,100,0.7,20,20,3+,15,75,"Bunny Binding
+Active | Mana: 15/75
+Throw a spirit bunny towards the farthest enemy, dealing magic damage to enemies along the way, reduced by 30% each time it his an enemy. The first 2 enemies hit are Stunned for 1.5 seconds.
+Damage: 210% / 315% / 480% AP
+"
+Malphite,1,"['Heavenly ', 'Behemoth']",650 / 1170 / 2106,50 / 75 / 113,100,0.55,40,40,1,40,80,"Topaz Skin
+Active | Mana: 40/80
+For 8 seconds, gain Armor and attacks deal magic damage to enemies in a cone.
+Armor: 75% / 90% / 110% AP Damage: 90% / 120% / 160% AR
+"
+Morgana,4,"['Ghostly ', 'Sage']",750 / 1350 / 2430,40 / 60 / 90,100,0.75,40,40,3+,0,60,"The Tempest's Torment
+Active | Mana: 0/60
+Create a blizzard at the largest clump of enemies within range that deals magic damage over 3 seconds and Chills for 1 second. Chill: Reduce Attack Speed by 10%
+Damage: 250% / 375% / 1600% AP
+"
+Nautilus,4,"['Mythic ', 'Warden']",1000 / 1800 / 3240,70 / 105 / 158,100,0.6,60,60,1,80,180,"Depth Charge
+Active | Mana: 80/180
+Send 3 shockwaves towards the most enemies in a line, dealing magic damage and Stunning all enemies hit.
+Damage: 150% / 225% / 1000% AP Stun Duration: 1.75 / 2 / 8
+"
+Neeko,2,"['Heavenly ', 'Mythic ', 'Arcanist']",800 / 1440 / 2592,45 / 68 / 101,100,0.65,45,45,1,40,80,"Hop Blossom
+Active | Mana: 40/80
+Hop into the air, reducing damage taken and Healing Health over 2 seconds. After, slam down and deal magic damage to adjacent enemies.
+Damage Reduction: 30% / 30% / 35% Heal: 275 / 300 / 350 (AP based) Damage: 200% / 300% / 475% AP
+"
+Ornn,4,"['Dryad ', 'Behemoth']",1000 / 1800 / 3240,60 / 90 / 135,100,0.6,60,60,1,80,120,"Forge of the Forest
+Active | Mana: 80/120
+Gain shield for 4 seconds. Channel and forge upstoppably over 2 seconds, dealing magic damage to adjacent enemies over the duration. After, toss an ephemeral Completed item to the nearest ally.
+Shield AP: 300% / 350% / 1200% Shield: 20% Health + Shield AP Damage: 300 / 450 / 1500 AP
+"
+Qiyana,2,"['Heavenly ', 'Duelist']",700 / 1260 / 2268,55 / 83 / 124,100,0.75,35,35,1,0,20,"Supreme Display of Talent
+Active | Mana: 0/20
+For 4 seconds, attacks deal bonus physical damage to the target and physical damage to enemies behind them. Qiyana will dash to find the best angle.
+Primary Damage AP: 20% / 30% / 45% Primary Damage: 135% AD + Primary Damage AP Secondary Damage: 75% Primary Damage
+"
+Rakan,5,"['Dragonlord ', 'Altruist', 'Lovers']",1100 / 1980 / 3564,60 / 90 / 135,100,0.85,60,60,2,30,90,"Grand Entrance
+Active | Mana: 30/90
+Dash into the largest group of enemies and deal magic damage to enemies in a 2-hex range. Gain Shield for each enemy hit for 2 seconds and reduce their damage by 10% for 4 seconds.
+Damage: 185% / 275% / 2000% AP Shield: 160% / 200% / 600% AP
+"
+Rek'Sai,1,"['Dryad ', 'Bruiser']",650 / 1170 / 2106,50 / 75 / 113,100,0.55,45,45,1,40,100,"Uproot
+Active | Mana: 40/100
+Gain 50 Armor and Magic Resist for 5 seconds. Stun nearby enemies for 1 second and deal magic damage.
+Damage AP: 70% / 90% / 120% Damage: 12% Health + 70% AP
+"
+Riven,2,"['Storyweaver ', 'Altruist', 'Bruiser']",700 / 1260 / 2268,50 / 75 / 113,100,0.75,40,40,1,0,25,"Broken Wings
+Active | Mana: 0/25
+Deal physical damage to the current target. Every 3rd cast, also deal physical damage to adjacent enemies and heal for Health.
+Damage: 150% / 150% / 155% AD Third Cast Damage: 300% / 300% / 310% AD Heal: 150% / 180% / 220% AP
+"
+Senna,2,"['Inkshadow ', 'Sniper']",600 / 1080 / 1944,55 / 83 / 124,100,0.75,20,20,3+,20,75,"Absolution
+Active | Mana: 20/75
+Fire a laser 2 Hexes beyond the current target, dealing physical damage to enemies hit. Grant Attack Damage to Senna and allies to the left and right for 4 seconds.
+Damage AD: 245% / 245% / 255% Damage AP: 20% / 30% / 45% Damage: AD + AP Attack Damage Bonus: 20% / 25% / 30%
+"
+Sett,5,"['Fated ', 'Umbral ', 'Warden']",1100 / 1980 / 3564,65 / 98 / 146,100,0.85,70,70,1,100,180,"Light and Shadow
+Active | Mana: 100/180
+Passive: At the start of combat, squat adjacent units in the same row. Permanently gain 2% Attack Damage for each 1000 Health squatted. (Gains are doubled in Hyper Roll) Active: Slam the current target forward, Stunning them and dealing physical damage. Deal Secondary damage plus % of the target's maximum health as physical damage to enemies within 2.5 hexes. Fated Bonus: Gain 15% Omnivamp.
+Primary Damage: 270% / 270% / 9001% AD Secondary Damage AP: 30% / 45% / 2000% AP Secondary Damage: 120% AD + Secondary Damage AP Percent Target Health Damage: 8% / 12% / 1000%
+"
+Shen,2,"['Ghostly ', 'Behemoth']",800 / 1440 / 2592,55 / 83 / 124,100,0.65,45,45,1,30,75,"Spirit's Refuge
+Active | Mana: 30/75
+For 4 seconds, reduce damage taken for Shen and for adjacent allies. Shen's next 3 attacks deal bonus true damage.
+Shen Reduction: 40% / 50% / 90% AP Ally Reduction: 15% / 20% / 30% AP True Damage: 100% / 150% / 235% AR
+"
+Sivir,1,"['Storyweaver ', 'Trickshot']",500 / 900 / 1620,55 / 83 / 124,100,0.7,15,15,3+,0,50,"On the Hunt
+Active | Mana: 0/50
+Gain Attack Damage and grant Attack Speed to self and adjacent allies for 8 seconds.
+Attack Damage: 95% / 95% / 100% Attack Speed: 15% / 20% / 25% AP
+"
+Soraka,3,"['Heavenly ', 'Altruist']",650 / 1170 / 2106,40 / 60 / 90,100,0.75,25,25,3+,0,60,"Divine Judgement
+Active | Mana: 0/60
+Passive: Each time your team loses 20% of their total Health, gain 8 Ability Power for the rest of combat. Active: Mana Reave the largest group of enemies within range. Deal magic damage to the center enemy and magic damage to adjacent enemies. Mana Reave: Increase max Mana by 20% until the next cast
+Damage: 220% / 330% / 510% AP Secondary Damage: 110% / 165% / 255% AP
+"
+Sylas,4,"['Umbral ', 'Bruiser']",1000 / 1800 / 3240,50 / 75 / 113,100,0.85,50,50,1,0,40,"Unchain The Demon
+Active | Mana: 0/40
+Dash around the target and slam, dealing magic damage and healing for Health. Swipe after, dealing magic damage to nearby enemies.
+Damage: 200% / 300% / 1000% AP Swipe Damage: 90% / 135% / 450% AP Heal: 120 / 140 / 500 (AP Based)
+"
+Syndra,4,"['Fated ', 'Arcanist']",700 / 1260 / 2268,45 / 68 / 101,100,0.75,30,30,3+,0,30,"Phantom Butterflies
+Active | Mana: 0/30
+Passive: Start combat with 10 butterflies and gain one every 1 cast. Active: Throw all butterflies at the current target, dealing magic damage for each butterfly. Fated Bonus: Deal 10% more damage.
+Damage: 40% / 60% / 180% AP
+"
+Tahm Kench,3,"['Mythic ', 'Bruiser']",850 / 1530 / 2754,60 / 90 / 135,100,0.6,45,45,1,40,100,"Tongue Lash
+Active | Mana: 40/100
+Gain Shield for 3 seconds and deal magic damage to the current target. If Tahm Kench has more Health than them, deal magic damage instead. Otherwise, gain more Shield.
+Damage: 300% / 450% / 700% AP Shield: 20% Health Bonus Magic Damage: 160% of Damage Bonus Shield: 200% / 250% / 300% AP
+"
+Teemo,2,"['Fortune ', 'Trickshot']",550 / 990 / 1782,40 / 60 / 90,100,0.7,20,20,3+,0,30,"Dim-Sum Delivery
+Active | Mana: 0/30
+Throw a spoiled dumpling at the nearest non-poisoned enemy, poisoning them for magic damage over 8 seconds.
+Damage: 420% / 630% / 1000% AP
+"
+Thresh,3,"['Fated ', 'Behemoth']",900 / 1620 / 2916,75 / 113 / 169,100,0.5,50,50,2,30,90,"Guided Passage
+Active | Mana: 30/90
+Grant Shield to Thresh and the lowest Health ally for 4 seconds and deal magic damage to enemies adjacent to both. Thresh shares % of his Armor and Magic Resist with the shielded ally for 6 seconds. Fated Bonus: Gain 20 Armor and Magic Resist.
+Shield: 360% / 400% / 450% AP Damage: 100% / 150% / 250% AP Shard Defenses: 30% / 30% / 35%
+"
+Tristana,3,"['Fortune ', 'Duelist']",700 / 1260 / 2268,55 / 83 / 124,100,0.75,25,25,3+,40,100,"Firecracker Frenzy
+Active | Mana: 40/100
+Gain Attack Damage for 6 seconds. Jump on the current target and deal physical damage to adjacent enemies, before bouncing to a safe location.
+Attack Damage Gained: 45% / 45% / 50% Damage AD: 265% / 265% / 270% Damage AP: 75% / 115% / 185% Damage: AD + AP
+"
+Udyr,5,"['Inkshadow ', 'Behemoth', 'Spirit Walker']",950 / 1710 / 3078,50 / 75 / 113,100,0.95,50,50,1,30,90,"Ram Slam / Tiger Strikes
+Active | Mana: 30/90
+Ram Slam: Gain Shield for 3 seconds and charge through the current target, briefly knocking up any enemies he hits. Grab the nearest enemy and slam them into the ground, dealing total magic damage to them and adjacent enemies. Tiger Strike: Gain 60% Attack Speed and empower Udyr's attacks for the next 6 seconds to strike 4 additional times dealing bonus magic damage.
+Shield: 300% / 375% / 3000% AP Slam Damage: 300% / 450% / 5555% AP Strike Damage: 150% / 225% / 1500% AP
+"
+Volibear,3,"['Inkshadow ', 'Duelist']",900 / 1620 / 2916,45 / 68 / 101,100,0.8,50,50,1,0,50,"Ink Smash
+Active | Mana: 0/50
+Empower the next three attacks. The first two heal for Health and deal bonus magic damage. The final attack deals magic damage and Stuns the target for 1 second.
+Heal: 140% / 170% / 210% AP Damage AP: 35% / 50% / 80% Slam Damage AP: 80% / 120% / 185% Slam Damage: 10% Health + Slam Damage AP
+"
+Wukong,5,"['Heavenly ', 'Great', 'Sage']",1200 / 2160 / 3888,80 / 120 / 180,100,0.9,65,65,1,0,30,"Legendary Prowess
+Active | Mana: 0/30
+Cycle through the following abilities: Throw staff out, dealing physical damage to the current target and Stunning them for 1.5 seconds. Spin, dealing physical damage to enemies within 1-hex range. Dash to hit the most enemies in a 3-hex line, then slam down staff dealing physical damage to enemies hit.
+Stun Damage: 300% / 300% / 900% AD Spin Damage: 300% / 300% / 900% AD Slam Damage AP: 70% / 105% / 155% Slam Damage AD: 300% / 300% / 1500% Slam Damage: Slam Damage AD + Slam Damage AP
+"
+Xayah,5,"['Dragonlord ', 'Lovers', 'Trickshot']",850 / 1530 / 2754,80 / 120 / 180,100,0.9,40,40,3+,30,90,"Feathers Fly!
+Active | Mana: 30/90
+Throw 12 feathers at the 4 closest enemies, each dealing physical damage. Then, recall the feathers, dealing physical damage to enemies they pass through.
+Damage: 70% / 70% / 500% AD Recall Damage AD: 50% / 50% / 500% Recall Damage AP: 15% / 25% / 75% Recall Damage: Recall Damage AD + Recall Damage AP
+"
+Yasuo,1,"['Fated ', 'Duelist']",600 / 1080 / 1944,35 / 53 / 79,100,0.75,45,45,1,0,70,"Steel Tempest
+Active | Mana: 0/70
+Passive: Attacks while Shielded deal bonus magic damage. Active: Gain Shield for 5 seconds and deal magic damage to the current target. Fated Bonus: Gain 300 Shield at the start of combat.
+Passive Damage: 40% / 40% / 45% AR + 40% / 40% / 45% MR Shield: 175 / 200 / 250 Shield AR & MR: 100% / 110% / 125% Total Shield: @hield + Shield AR + Shield MR Damage: 200% / 300% / 450% AP
+"
+Yone,3,"['Umbral ', 'Reaper']",800 / 1440 / 2592,65 / 98 / 146,100,0.9,50,50,1,0,60,"Fate Sealed
+Active | Mana: 0/60
+Dash in spirit form to the furthest enemy within 3 Hexes for 3 seconds, dealing physical damage and Wounding enemies along the way for 5 seconds. While in spirit form, gain Shield and 75% Attack Speed. Afterwards, Yone returns to his starting position. Each cast this combat increases his dash range by 1 Hex. Wound: Reduce healing received by 33%
+Shield: 280 / 340 / 400 AP Damage: 165% / 165% / 175% AD
+"
+Yorick,2,"['Umbral ', 'Behemoth']",800 / 1440 / 2592,60 / 90 / 135,100,0.6,50,50,1,40,90,"Dark Despoil
+Active | Mana: 40/90
+Sap power from the 2 nearest enemies, gainng max Health and dealing magic damage to them over 3 seconds.
+Bonus Health: 300 / 360 / 420 Damage: 160% / 240% / 375% AP
+"
+Zoe,3,"['Fortune ', 'Storyweaver ', 'Arcanist']",650 / 1170 / 2106,45 / 68 / 101,100,0.75,25,25,3+,0,60,"Calculated!
+Active | Mana: 0/60
+Passive: Kills increase the number of ricochets by 1 for the rest of combat. Active: Fire a missile dealing magic damage to the current target. The missile ricochets to the farthest unit within 2 hexes, dealing magic damage.
+Damage: 275% / 415% / 640% AP Damage: 90% / 135% / 215% AP
+"
+Zyra,2,"['Storyweaver ', 'Sage']",600 / 1080 / 1944,40 / 60 / 90,100,0.75,20,20,3+,30,75,"Paper Thorns
+Active | Mana: 30/75
+Summon 2 Vine Lashers that attack the nearest enemy 3 times. Their attacks deal magic damage and Wound their targets for 6 seconds. Wound: Reduce healing received by 33%
+Damage: 90% / 135% / 210% AP
+"

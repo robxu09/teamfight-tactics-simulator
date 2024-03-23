@@ -32,6 +32,7 @@ class SimulationResults:
         return {
             'name' : champion.name,
             'star_level' : champion.star_level,
+            'time_survived': self.get_simulation_runtime(),
             'current_health' : round(champion.health, DIGITS_TO_ROUND_TO),
 
             'items' : item_names,
@@ -62,7 +63,4 @@ class SimulationResults:
             'total_shielded': round(champion.stat_tracker.total_shielded, DIGITS_TO_ROUND_TO),
 
         }
-    
-    def print_results(self):
-        print_formatted_dict(self.results)
 
