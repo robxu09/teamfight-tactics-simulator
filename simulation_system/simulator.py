@@ -78,7 +78,7 @@ def export_results_to_csv(sim_name, set, patch, results):
         current_datetime = datetime.now()
 
         # Format the current date as YYYY-MM-DD
-        current_date = current_datetime.strftime("%Y-%m-%d")
+        current_date = current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
 
         # Specify the keys for the CSV header
         fieldnames = results[0].keys()
