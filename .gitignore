@@ -10,3 +10,6 @@
 
 # Virtual environments
 /venv
+
+# results
+/results

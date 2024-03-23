@@ -7,14 +7,14 @@ class SimulationResults:
         self.champions = champions
         self.timer = timer
 
-        # results is a dictionary: key = integer, value = Champion_results
-        self.results = {}
+        # results is a list of dictionaries
+        self.results = []
 
     def populate_results(self):
 
         # for each champion, populate the dictionary with
         for index, champion in enumerate(self.champions, 1):
-            self.results['Champion '+str(index)] = self.get_champion_results(champion)
+            self.results.append(self.get_champion_results(champion))
 
     def get_simulation_runtime(self):
 

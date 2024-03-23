@@ -119,3 +119,18 @@ Locket of the Iron Solari,0,0,0,0,250,0,0,0,"Combat start: The holder and allies
 Randuin's Omen,0,0,0,0,250,0,0,0,Combat start: Grant   30 Armor and   30 Magic Resistance to the holder and adjacent allies. ​​ [Support item]
 Aegis of the Legion,0,0,0,0,250,0,0,0,"Combat start: Grant 30% Attack Speed and 15 Armor and Magic Resist to the holder, adjacent allies in the same row, and all allies behind them for 12 seconds. ​​ [Support item]"
 Chalice of Power,0,0,0,0,250,0,0,0,Combat start: Grant 25 Ability Power and 10 Mana to the holder and allies within 2 hexes in the same row. ​​ [Support item]
+Tattoo of Vitality,0,0,0,0,250,0,0,0,Attacks heal the holder for 2.5% of their max Health and deal the same amount as bonus magic damage.
+Tattoo of Force,0,0,30,30,0,0,0,0,"Whenever the holder acquires a new target they run quickly to and briefly stun them, dealing 250 magic damage, and double the stats from this item for 4 seconds."
+Tattoo of Bombardment,20,0,0,0,0,0,20,0,Every third attack fires bolts at the two lowest percent health enemies which deal 65% Attack Damage as physical damage.
+Tattoo of Protection,0,0,0,0,250,0,0,0,"Gain a 50% max Health Shield after casting the first time each combat. When it breaks, grant 50% of this shield amount to the two nearest allies."
+Tattoo of Toxin,25,25,0,0,0,0,0,0,Damage applies a toxin that deals an additional 33% of that damage over 3 seconds and 33%  Wounds  the target. Wound : Reduces healing received
+Tattoo of Fury,0,0,0,0,0,0,25,0,"Deal 35% bonus damage to targets below half health. On takedown, gain 40% attack speed for 6 seconds."
+Amulet of Ascension,500,250,200,200,0,0,2,0,This will change EVERYTHING.
+Scroll of Force,0,0,0,0,0,0,0,0,Kayle's ability hits a wider area.
+Scroll of Haste,0,0,0,0,0,0,0,0,Attacks grant Kayle 5% stacking Attack Speed.
+Talisman of Aid,0,0,0,0,0,0,0,0,Kayle's damaging attacks and abilities 30%  Shred  and  Sunder  enemies hit for 3 seconds.
+Talisman of Might,0,0,0,0,0,0,0,0,Grant Kayle and adjacent allies in the same row 20 Ability Power at the start of combat.
+Talisman of Speed,0,0,0,0,0,0,0,0,Grant Kayle and adjacent allies in the same row 15% Attack Speed at the start of combat.
+Tome of Mending,0,0,0,0,0,0,0,0,"Every 8 seconds, revive the strongest ally that hasn't been revived yet at 50% of their maximum Health."
+Tome of Power,0,0,0,0,0,0,0,0,"Kayle deals 10% more damage. When she casts, she fires two waves."
+Tome of Swiftness,0,0,0,0,0,0,0,0,Kayle deals 10% more damage. Her attacks now hit in a 1-hex radius around the target

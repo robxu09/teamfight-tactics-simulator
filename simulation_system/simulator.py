@@ -1,4 +1,5 @@
-import copy
+import re, os, csv, copy
+from datetime import datetime
 
 from scraper.scraper import get_html_content, extract_champion_urls, extract_champion_data, extract_items_data, export_items_to_csv, export_champion_details_to_csv
 from helper_functions import print_formatted_dict
@@ -10,13 +11,13 @@ from scenarios.one_vs_one import OneVsOne
 
 def run_1v1_with_two_champions(set, patch):
 
-
     # Get a dictionary of Champion objects
     all_champions = create_champions(set, patch)
     # Create items
     all_items = create_items(set, patch)
 
-    print("One vs One: ")
+
+    sim_name = "1v1"
 
     # create champion 1
     while True:
@@ -64,13 +65,53 @@ def run_1v1_with_two_champions(set, patch):
     # Create and run the one versus one scenario
     one_vs_one_scenario = OneVsOne()
     results = one_vs_one_scenario.run(champion1, champion2, 50)
-    print_results(results)
+    # print_results(results)
+    export_results_to_csv(sim_name, set, patch, results)
 
     return
 
+def export_results_to_csv(sim_name, set, patch, results):
+
+    if(len(results) > 0):
+
+        # Get the current date and time
+        current_datetime = datetime.now()
+
+        # Format the current date as YYYY-MM-DD
+        current_date = current_datetime.strftime("%Y-%m-%d")
+
+        # Specify the keys for the CSV header
+        fieldnames = results[0].keys()
+
+        # Specify the path where you want to save the CSV file
+        csv_directory = "results/set_" + set + "/patch_" + patch + "/" + sim_name # Relative path to the directory
+
+        # Create the directory if it doesn't exist
+        os.makedirs(csv_directory, exist_ok=True)
+
+        # Specify the file path and encoding
+        file_path = csv_directory +"/results_" + str(current_date) + ".csv"
+        encoding = "utf-8"  # Use UTF-8 encoding
+
+        # Write data to the CSV file
+        with open(file_path, mode="w", newline="", encoding=encoding) as csv_file:
+
+            # Create a CSV writer object
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+            # Write the header
+            writer.writeheader()
+
+            # Write the data
+            for result in results:
+                writer.writerow(result)
+
+    return
 
 def print_results(results):
-    print_formatted_dict(results)
+    for result in results:
+        print_formatted_dict(result)
+        print()
 
 def scrape_champions_and_items_to_csv(set, patch):
     scrape_champions_to_csv(set, patch)
@@ -91,7 +132,7 @@ def scrape_champions_to_csv(set, patch):
             champion_data = extract_champion_data(html_content, c[1])
             champs_data.append(champion_data)
 
-        print_formatted_dict(champion_data)
+        # print_formatted_dict(champion_data)
 
     export_champion_details_to_csv(champs_data, set, patch)
     # end champions scraper function. end result is csv is generated
@@ -102,9 +143,9 @@ def scrape_items_to_csv(set, patch):
     html_content = get_html_content(url)
     if html_content:
         items_data = extract_items_data(html_content)
-        for item_data in items_data:
-            print_formatted_dict(item_data)
-            print()
+        # for item_data in items_data:
+        #     print_formatted_dict(item_data)
+        #     print()
         export_items_to_csv(items_data, set, patch)
     # end items scraper function. end result is csv is generated
         
